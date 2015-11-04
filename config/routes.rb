@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :forklifts
+  resources :types do
+    resources :forklifts
+  end
   root 'static_pages#home'
 
   devise_for :users, :path => 'admin', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup'}

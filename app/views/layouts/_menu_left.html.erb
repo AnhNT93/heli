@@ -1,0 +1,24 @@
+<div>
+   <ul class="nav nav-pills nav-stacked">
+        <li class="active text-center"><a href="#">XE NÂNG HÀNG</a></li>
+        <% @types=Type.menu_level_1 %>
+        <% @types.each do |type| %>
+          <% @type_childrens=Type.menu_level_2(type) %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= type.name %> <% if @type_childrens.count > 0 %><b class="caret"></b><% end %>
+            </a>
+            <% if @type_childrens.count > 0 %>
+              <ul class="dropdown-menu">
+                <% @type_childrens=Type.menu_level_2(type) %>
+                <% @type_childrens.each do |type_children| %>
+                  <li><%= link_to type_children.name, root_path %></li>
+                  <li class="divider"></li>
+                <% end %>
+              </ul>
+            <%end%>
+          </li>
+          <li class="divider"></li>
+        <% end %>
+   </ul>  
+ </div>

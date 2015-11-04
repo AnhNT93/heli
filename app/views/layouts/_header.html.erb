@@ -1,33 +1,83 @@
 <header>
-<div class="navbar navbar-inverse navbar-static-top " role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only"><%= t"title.toggle" %></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "San pham 1", root_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "San pham 2", root_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "San pham 3", root_path %></li>
-            </ul>
-          </li>
-      </ul>
-    </div>
-  </div>
+        <div class="top-header clearfix">
+            <div class=" container logo">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="pull-left">
+                            <%= link_to image_tag("logo/logo.png"),root_path %>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav1 clearfix">
+        </div>
+        <section class="slider">
+            <div class="banner">
+                <div class="bannern">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <%= image_tag("slider/1.jpg")%>
+                            </div>
+                            <div class="item">
+                                <%= image_tag("slider/2.jpg")%>
+                            </div>
+                            <div class="item">
+                                <%= image_tag("slider/3.jpg")%>
+                            </div>
+                            <div class="item">
+                                <%= image_tag("slider/4.jpg")%>
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="menu-header bannern">
+                <div id="cssmenu" >
+                    <ul>
+                        <li class="home-menu"><a href="#">Trang Chủ </a></li>
+                        <li><a href="#">Giới Thiệu</a></li>
+                        <li class="active has-sub">
+                            <a href="#">
+                                Sản Phẩm <span class="caret"></span>
+                                <%= image_tag("logo/mtop_down.gif")%>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <% @types=Type.menu_level_1 %>
+                                <% @types.each do |type| %>
+                                  <li><%= link_to type.name, type_path(type) %></li>
+                                <% end %>
+                            </ul>
+                        </li>
+                        <li><a href="#">Dịch vụ kĩ thuật</a></li>
+                        <li><a href="#">Phụ Tùng</a></li>
+                        <li><a href="#">Bản đồ</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search" size="15">
+                            </div>
+                            <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+                        </form>
+                </ul>
+                </div>
+        </div>
 </header>
 

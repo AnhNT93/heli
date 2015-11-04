@@ -1,0 +1,188 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Forklifts</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Ten</th>
+      <!-- <th>Mo ta</th>
+      <th>Type</th>
+      <th>Model</th>
+      <th>Cong suat</th>
+      <th>Nha san xuat</th>
+      <th>Loai xe</th>
+      <th>Tai trong nang</th>
+      <th>Trong tam tai</th>
+      <th>Loai nhien lieu</th>
+      <th>Kieu xe</th>
+      <th>Loai lop</th>
+      <th>So banh xe truoc</th>
+      <th>So banh xe sau</th>
+      <th>Chieu cao nang lon nhat</th>
+      <th>Khoang nang tu do</th>
+      <th>Chieu dai cang nang</th>
+      <th>Chieu rong cang nang</th>
+      <th>Do day cang nang</th>
+      <th>Goc nghieng khung nang truoc</th>
+      <th>Goc nghieng khung nang sau</th>
+      <th>Chieu dai xe co cang nang</th>
+      <th>Chieu rong xe</th>
+      <th>Chieu cao khung nang</th>
+      <th>Chieu cao khung nang khi nang cao nhat</th>
+      <th>Chieu cao cabin</th>
+      <th>Ban kinh quay vong toi thieu</th>
+      <th>Toc do di chuyen lon nhat co tai</th>
+      <th>Toc do di chuyen lon nhat khong tai</th>
+      <th>Toc do nang co tai</th>
+      <th>Toc do nang khong tai</th>
+      <th>Toc do ha co tai</th>
+      <th>Toc do ha khong tai</th>
+      <th>Ung suat lon nhat co tai</th>
+      <th>Ung suat lon nhat khong tai</th>
+      <th>Kha nang leo doc co tai</th>
+      <th>Kha nang leo doc khong tai</th>
+      <th>Tong khoi luong</th>
+      <th>Phan bo khoi luong khi co tai truoc</th>
+      <th>Phan bo khoi luong khi co tai sau</th>
+      <th>Phan bo khoi luong khi khong tai truoc</th>
+      <th>Phan bo khoi luong khi khong tai sau</th>
+      <th>Kich thuoc lop xe truoc</th>
+      <th>Kich thuoc lop xe sau</th>
+      <th>Chieu dai co so</th>
+      <th>Khoang cach tam lop truoc</th>
+      <th>Khoang cach tam lop sau</th>
+      <th>Khoang sang gam xe</th>
+      <th>He thong phanh chan</th>
+      <th>He thong phanh tay</th>
+      <th>Ac qui</th>
+      <th>Loai dong co</th>
+      <th>Mo mem</th>
+      <th>So xy lanh</th>
+      <th>Dung tich buong chay</th>
+      <th>Dung tich binh nhien lieu</th>
+      <th>Chieu cao co so</th>
+      <th>Chieu dai co so voi cang nang</th>
+      <th>Chieu rong co so</th>
+      <th>Kich thuoc tu tam cau truoc toi khung nang</th>
+      <th>Kich thuoc tu tam cau sau toi duoi xe</th>
+      <th>Khoang cach truc banh xe</th>
+      <th>Khoang cach vet lop xe truoc</th>
+      <th>Khoang cach vet lop xe sau</th>
+      <th>Ban kinh quay vong</th>
+      <th>Ban kinh quay nho nhat</th>
+      <th>Goc nghieng cot nang truoc</th>
+      <th>Goc nghien cot nang sau</th>
+      <th>Luc nang lon nhat co tai</th>
+      <th>Luc nang lon nhat khong tai</th>
+      <th>Dien nang su dung</th>
+      <th>Tu trong</th>
+      <th>So di chuyen</th>
+      <th>Suc keo co tai</th>
+      <th>Suc keo khong tai</th>
+      <th>Mo to</th>
+      <th>Bom</th>
+      <th>Goc nghieng truoc</th>
+      <th>Goc nghieng sau</th>
+      <th>Mo to lai</th>
+      <th>Mo to bom</th> -->
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forklifts.each do |forklift| %>
+      <tr>
+        <td><%= forklift.ten %></td>
+        <!-- <td><%= forklift.mo_ta %></td>
+        <td><%= forklift.type_id %></td>
+        <td><%= forklift.model %></td>
+        <td><%= forklift.cong_suat %></td>
+        <td><%= forklift.nha_san_xuat %></td>
+        <td><%= forklift.loai_xe %></td>
+        <td><%= forklift.tai_trong_nang %></td>
+        <td><%= forklift.trong_tam_tai %></td>
+        <td><%= forklift.loai_nhien_lieu %></td>
+        <td><%= forklift.kieu_xe %></td>
+        <td><%= forklift.loai_lop %></td>
+        <td><%= forklift.so_banh_xe_truoc %></td>
+        <td><%= forklift.so_banh_xe_sau %></td>
+        <td><%= forklift.chieu_cao_nang_lon_nhat %></td>
+        <td><%= forklift.khoang_nang_tu_do %></td>
+        <td><%= forklift.chieu_dai_cang_nang %></td>
+        <td><%= forklift.chieu_rong_cang_nang %></td>
+        <td><%= forklift.do_day_cang_nang %></td>
+        <td><%= forklift.goc_nghieng_khung_nang_truoc %></td>
+        <td><%= forklift.goc_nghieng_khung_nang_sau %></td>
+        <td><%= forklift.chieu_dai_xe_co_cang_nang %></td>
+        <td><%= forklift.chieu_rong_xe %></td>
+        <td><%= forklift.chieu_cao_khung_nang %></td>
+        <td><%= forklift.chieu_cao_khung_nang_khi_nang_cao_nhat %></td>
+        <td><%= forklift.chieu_cao_cabin %></td>
+        <td><%= forklift.ban_kinh_quay_vong_toi_thieu %></td>
+        <td><%= forklift.toc_do_di_chuyen_lon_nhat_co_tai %></td>
+        <td><%= forklift.toc_do_di_chuyen_lon_nhat_khong_tai %></td>
+        <td><%= forklift.toc_do_nang_co_tai %></td>
+        <td><%= forklift.toc_do_nang_khong_tai %></td>
+        <td><%= forklift.toc_do_ha_co_tai %></td>
+        <td><%= forklift.toc_do_ha_khong_tai %></td>
+        <td><%= forklift.ung_suat_lon_nhat_co_tai %></td>
+        <td><%= forklift.ung_suat_lon_nhat_khong_tai %></td>
+        <td><%= forklift.kha_nang_leo_doc_co_tai %></td>
+        <td><%= forklift.kha_nang_leo_doc_khong_tai %></td>
+        <td><%= forklift.tong_khoi_luong %></td>
+        <td><%= forklift.phan_bo_khoi_luong_khi_co_tai_truoc %></td>
+        <td><%= forklift.phan_bo_khoi_luong_khi_co_tai_sau %></td>
+        <td><%= forklift.phan_bo_khoi_luong_khi_khong_tai_truoc %></td>
+        <td><%= forklift.phan_bo_khoi_luong_khi_khong_tai_sau %></td>
+        <td><%= forklift.kich_thuoc_lop_xe_truoc %></td>
+        <td><%= forklift.kich_thuoc_lop_xe_sau %></td>
+        <td><%= forklift.chieu_dai_co_so %></td>
+        <td><%= forklift.khoang_cach_tam_lop_truoc %></td>
+        <td><%= forklift.khoang_cach_tam_lop_sau %></td>
+        <td><%= forklift.khoang_sang_gam_xe %></td>
+        <td><%= forklift.he_thong_phanh_chan %></td>
+        <td><%= forklift.he_thong_phanh_tay %></td>
+        <td><%= forklift.ac_quy %></td>
+        <td><%= forklift.loai_dong_co %></td>
+        <td><%= forklift.mo_men %></td>
+        <td><%= forklift.so_xy_lanh %></td>
+        <td><%= forklift.dung_tich_buong_chay %></td>
+        <td><%= forklift.dung_tich_binh_nhien_lieu %></td>
+        <td><%= forklift.chieu_cao_co_so %></td>
+        <td><%= forklift.chieu_dai_co_so_voi_cang_nang %></td>
+        <td><%= forklift.chieu_rong_co_so %></td>
+        <td><%= forklift.kich_thuoc_tu_tam_cau_truoc_toi_khung_nang %></td>
+        <td><%= forklift.kich_thuoc_tu_tam_cau_sau_toi_duoi_xe %></td>
+        <td><%= forklift.khoang_cach_truc_banh_xe %></td>
+        <td><%= forklift.khoang_cach_vet_lop_xe_truoc %></td>
+        <td><%= forklift.khoang_cach_vet_lop_xe_sau %></td>
+        <td><%= forklift.ban_kinh_quay_vong %></td>
+        <td><%= forklift.ban_kinh_quay_nho_nhat %></td>
+        <td><%= forklift.goc_nghieng_cot_nang_truoc %></td>
+        <td><%= forklift.goc_nghien_cot_nang_sau %></td>
+        <td><%= forklift.luc_nang_lon_nhat_co_tai %></td>
+        <td><%= forklift.luc_nang_lon_nhat_khong_tai %></td>
+        <td><%= forklift.dien_nang_su_dung %></td>
+        <td><%= forklift.tu_trong %></td>
+        <td><%= forklift.so_di_chuyen %></td>
+        <td><%= forklift.suc_keo_co_tai %></td>
+        <td><%= forklift.suc_keo_khong_tai %></td>
+        <td><%= forklift.mo_to %></td>
+        <td><%= forklift.bom %></td>
+        <td><%= forklift.goc_nghieng_truoc %></td>
+        <td><%= forklift.goc_nghieng_sau %></td>
+        <td><%= forklift.mo_to_lai %></td>
+        <td><%= forklift.mo_to_bom %></td> -->
+        <td><%= link_to 'Show', forklift %>
+          <%= link_to 'Edit', edit_forklift_path(forklift) %>
+          <%= link_to 'Destroy', forklift, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Forklift', new_forklift_path %>

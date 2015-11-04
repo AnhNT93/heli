@@ -1,0 +1,279 @@
+<table class="table table-bordered table-hover">
+  <tbody>
+    <% if @forklift.ten!="" %>
+      <tr>
+        <th>Tên</th>
+        <td><%= @forklift.ten %></td>
+      </tr>
+    <% end %>
+    <% if @forklift.model!="" %>
+      <tr>
+        <th>Model</th>
+        <td><%= @forklift.model %></td>
+      </tr>
+    <% end %>
+    <% if @forklift.cong_suat.to_i > 0 %>
+      <tr>
+        <th>Công suất:</th>
+        <td><%= @forklift.cong_suat %></td>
+      </tr>
+    <% end %>
+    <% if @forklift.nha_san_xuat!="" %>
+      <tr>
+        <th>Nhà sản suất</th>
+        <td><%= @forklift.nha_san_xuat %></td>
+      </tr>
+    <% end %>
+    <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %>
+    <% if @forklift.tai_trong_nang.to_i>0 %>
+      <tr>
+        <th>Tải trọng nâng</th>
+        <td><%= @forklift.tai_trong_nang %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.trong_tam_tai.to_i>0 %>
+      <tr>
+        <th>Trọng tâm tải</th>
+        <td><%= @forklift.trong_tam_tai %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.loai_nhien_lieu!="" %>
+      <tr>
+        <th>Loại nhiên liệu</th>
+        <td><%= @forklift.loai_nhien_lieu %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.kieu_xe!="" %>
+      <tr>
+        <th>Kiểu xe</th>
+        <td><%= @forklift.kieu_xe %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.loai_lop!="" %>
+      <tr>
+        <th>Loại lốp</th>
+        <td><%= @forklift.loai_lop %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.so_banh_xe_truoc.to_i>0 %>
+      <tr>
+        <th>Số bánh xe(trước/sau)</th>
+        <td><%= @forklift.so_banh_xe_truoc %>/<%= @forklift.so_banh_xe_sau %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.chieu_cao_nang_lon_nhat.to_i>0 %>
+      <tr>
+        <th>Chiều cao nâng lớn nhất</th>
+        <td><%= @forklift.chieu_cao_nang_lon_nhat %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.khoang_nang_tu_do.to_i>0 %>
+      <tr>
+        <th>Khoảng nâng tự do</th>
+        <td><%= @forklift.khoang_nang_tu_do %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.chieu_dai_cang_nang.to_i>0 %>
+      <tr>
+        <th>Kích thước càng nâng(Dài x rộng x dày)</th>
+        <td><%= @forklift.chieu_dai_cang_nang %> x <%= @forklift.chieu_rong_cang_nang %> x <%= @forklift.do_day_cang_nang %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.goc_nghieng_khung_nang_truoc.to_i>0 %>
+      <tr>
+        <th>Góc nghiêng khung nâng(trước/ sau)</th>
+        <td><%= @forklift.goc_nghieng_khung_nang_truoc %>/<%= @forklift.goc_nghieng_khung_nang_sau %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.chieu_dai_xe_co_cang_nang.to_i>0 %>
+      <tr>
+        <th>Chiều dài xe (có càng nâng)</th>
+        <td><%= @forklift.chieu_dai_xe_co_cang_nang %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.chieu_rong_xe.to_i>0 %>
+      <tr>
+        <th>Chiều rộng xe</th>
+        <td><%= @forklift.chieu_rong_xe %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.chieu_cao_khung_nang.to_i>0 %>
+      <tr>
+        <th>Chiều cao khung nâng</th>
+        <td><%= @forklift.chieu_cao_khung_nang %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.chieu_cao_khung_nang_khi_nang_cao_nhat.to_i>0 %>
+      <tr>
+        <th>Chiều cao khung nâng khi nâng cao nhất</th>
+        <td><%= @forklift.chieu_cao_khung_nang_khi_nang_cao_nhat %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.chieu_cao_cabin.to_i>0 %>
+      <tr>
+        <th>Chiều cao cabin</th>
+        <td><%= @forklift.chieu_cao_cabin %></td>
+      </tr>
+    <% end %>
+    <% if @forklift.ban_kinh_quay_vong_toi_thieu.to_i>0 %>
+      <tr>
+        <th>Bán kính quay vòng tối thiểu</th>
+        <td><%= @forklift.ban_kinh_quay_vong_toi_thieu %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.toc_do_di_chuyen_lon_nhat_co_tai.to_i>0 %>
+      <tr>
+        <th>Tốc độ di chuyển lớn nhất(có tải/ không tải)</th>
+        <td><%= @forklift.toc_do_di_chuyen_lon_nhat_co_tai %>/<%= @forklift.toc_do_di_chuyen_lon_nhat_khong_tai %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.toc_do_nang_co_tai.to_i>0 %>
+      <tr>
+        <th>Tốc độ nâng(có tải/ không tải)</th>
+        <td><%= @forklift.toc_do_nang_co_tai %>/<%= @forklift.toc_do_nang_khong_tai %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.toc_do_ha_co_tai.to_i>0 %>
+      <tr>
+        <th>Tốc độ hạ(có tải/ không tải)</th>
+        <td><%= @forklift.toc_do_ha_co_tai %>/<%= @forklift.toc_do_ha_khong_tai %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.ung_suat_lon_nhat_co_tai.to_i>0 %>
+      <tr>
+        <th>Ứng suất lớn nhất(có tải/ không tải)</th>
+        <td><%= @forklift.ung_suat_lon_nhat_co_tai %>/<%= @forklift.ung_suat_lon_nhat_khong_tai %></td>
+      </tr>
+    <% end %>
+    <% if @forklift.kha_nang_leo_doc_co_tai.to_i>0 %>
+      <tr>
+        <th>Khả năng leo dốc(có tải/ không tải)</th>
+        <td><%= @forklift.kha_nang_leo_doc_co_tai %>/<%= @forklift.kha_nang_leo_doc_khong_tai %></td>
+      </tr>
+    <% end %>
+    <% if @forklift.tong_khoi_luong.to_i>0 %>
+      <tr>
+        <th>Tổng khối lượng</th>
+        <td><%= @forklift.tong_khoi_luong %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.phan_bo_khoi_luong_khi_co_tai_truoc.to_i > 0 %>
+      <tr>
+        <th>Phân bố khối lượng khi có tải(trước/sau)</th>
+        <td><%= @forklift.phan_bo_khoi_luong_khi_co_tai_truoc %>/<%= @forklift.phan_bo_khoi_luong_khi_co_tai_sau %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.phan_bo_khoi_luong_khi_khong_tai_truoc.to_i > 0 %>
+      <tr>
+        <th>Phân bố khối lượng khi không tải(trước/sau)</th>
+        <td><%= @forklift.phan_bo_khoi_luong_khi_khong_tai_truoc %>/<%= @forklift.phan_bo_khoi_luong_khi_khong_tai_sau %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.kich_thuoc_lop_xe_truoc!="" %>
+      <tr>
+        <th>Kích thước lốp xe - trước</th>
+        <td><%= @forklift.kich_thuoc_lop_xe_truoc %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.kich_thuoc_lop_xe_sau!="" %>
+      <tr>
+        <th>Kích thược lốp xe - sau</th>
+        <td><%= @forklift.kich_thuoc_lop_xe_sau %></td>
+      </tr>
+    <% end %> 
+    <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %> <% if @forklift.loai_xe!="" %>
+      <tr>
+        <th>Loại xe</th>
+        <td><%= @forklift.loai_xe %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_forklift_path(@forklift) %> |
+<%= link_to 'Back', forklifts_path %>

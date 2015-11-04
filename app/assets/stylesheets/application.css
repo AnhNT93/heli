@@ -13,10 +13,3 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
-.navbar{
-    background-color:#AAAAAA;
-    color:#ffffff;
-    border-radius:0;
-}
