@@ -1,0 +1,1 @@
+json.extract! @container, :id, :type_id, :ten, :gioiThieu, :nhaSanXuat, :model, :taiTrongNang, :trongTamTai, :soHang, :tocDoNang, :tocDoDiChuyen, :banKinhQuayVongToiThieu, :khaNangLeoDoc, :lucKeo, :chieuCaoCanang, :chieuConCanNangKhiNangHetCo, :lopXe, :dongCo, :congSuatLstring, :momen, :tongChieuDai, :tongChieuRong, :created_at, :updated_at

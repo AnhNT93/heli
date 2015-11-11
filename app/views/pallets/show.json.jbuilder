@@ -1,0 +1,1 @@
+json.extract! @pallet, :id, :type_id, :ten, :gioiThieu, :nhaSanXuat, :model, :trongTai, :trongTamTai, :tocDoNang, :chieuCaoNangTieuChuan, :tocDoDiChuyen, :banKinhQuayVongToiThieu, :khaNangLeoDoc, :loaiDieuKhienLai, :motoLai, :motoBom, :acQuy, :kichThuocCangNang, :coLop, :tongKhoiLuong, :tongChieuDai, :tongChieuRong, :created_at, :updated_at

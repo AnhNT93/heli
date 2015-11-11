@@ -1,10 +1,16 @@
+
 <header>
+<!--<script type="text/javascript" src="js/bootstrap.js"></script>-->
+
+    <header>
         <div class="top-header clearfix">
-            <div class=" container logo">
+            <div class="logo">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="pull-left">
-                            <%= link_to image_tag("logo/logo.png"),root_path %>      
+                                  <a href="#">
+                                    <%= link_to image_tag("logo/logo.png"),root_path %>
+                                  </a>
                         </div>
                     </div>
                 </div>
@@ -25,16 +31,16 @@
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <%= image_tag("slider/1.jpg")%>
+                              <%= image_tag("slider/1.jpg")%>
                             </div>
                             <div class="item">
-                                <%= image_tag("slider/2.jpg")%>
+                              <%= image_tag("slider/2.jpg")%>
                             </div>
                             <div class="item">
-                                <%= image_tag("slider/3.jpg")%>
+                              <%= image_tag("slider/3.jpg")%>
                             </div>
                             <div class="item">
-                                <%= image_tag("slider/4.jpg")%>
+                              <%= image_tag("slider/4.jpg")%>
                             </div>
                         </div>
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -49,35 +55,73 @@
                 </div>
             </div>
         </section>
-        <div class="menu-header bannern">
-                <div id="cssmenu" >
-                    <ul>
-                        <li class="home-menu"><a href="#">Trang Chủ </a></li>
-                        <li><a href="#">Giới Thiệu</a></li>
-                        <li class="active has-sub">
+        <div class="banner-menu">
+        <div id="cssmenu" >
+                    <ul id="nav">
+                        <li><a href="#">TRANG CHỦ </a></li>
+                        <li><a href="#">GIỚI THIỆU</a></li>
+                        <li>
                             <a href="#">
-                                Sản Phẩm <span class="caret"></span>
-                                <%= image_tag("logo/mtop_down.gif")%>
+                                SẢN PHẨM <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <% @types=Type.menu_level_1 %>
-                                <% @types.each do |type| %>
-                                  <li><%= link_to type.name, type_path(type) %></li>
-                                <% end %>
+                            <ul >
+                              <li><%= link_to " Xe nâng hàng Diesel Heli", diesel_helis_path%></li>    
+                              <li><%= link_to " Xe nâng điện Heli", diesel_helis_path%></li>    
+                              <li><%= link_to " Xe nâng GAS/LPG", gas_path%></li>
+                              <li><%= link_to " Xe nâng Reach Truck", reach_trucks_path%></li>
+                              <li><%= link_to " Xe nâng xếp Pallet", pallets_path%></li>
+                              <li><%= link_to " Xe nâng trọng tải lớn", trong_tai_lons_path%></li>
+                              <li><%= link_to " Xe nâng Container", containers_path%></li>
                             </ul>
                         </li>
-                        <li><a href="#">Dịch vụ kĩ thuật</a></li>
-                        <li><a href="#">Phụ Tùng</a></li>
-                        <li><a href="#">Bản đồ</a></li>
-                        <li><a href="#">Liên Hệ</a></li>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search" size="15">
-                            </div>
-                            <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
-                        </form>
-                </ul>
-                </div>
-        </div>
-</header>
+                        <li><a href="#">DỊCH VỤ KĨ THUẬT</a></li>
+                        <li><a href="#">PHỤ TÙNG</a></li>
+                        <li><a href="#">BẢN ĐỒ</a></li>
+                        <li><a href="#">LIÊN HỆ</a></li>
 
+                     </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search" size="9">
+                        </div>
+                        <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+                    </form>
+        </div>
+        </div>
+    </header>
+    <div class="container ">
+     <div class="container-left clearfix">
+        <div id="menu_content">
+            <ul>
+                <li><a href="#">Xe nâng hàng Diesel Heli</a>
+                    <ul class="sub-menu_content">
+                        <li><a href="#">Xe nâng hàng Heli H2000 Series</a></li>
+                        <li><a href="#">Xe nâng hàng Heli Kseries</a></li>
+                        <li><a href="#">Xe nâng hàng Heli Gseries</a></li>
+                    </ul></li>
+                <li><a href="#">Xe nâng Heli
+                    <ul class="sub-menu_content">
+                        <li><a href="#">Xe nâng điện Heli AC 4 bánh</a></li>
+                        <li><a href="#">Xe nâng điện Heli DC 4 bánh</a></li>
+                        <li><a href="#">Xe nâng điện Heli 3 bánh</a></li>
+                    </ul></a>
+
+                </li>
+                <li><a href="#">Xe nâng GAS/LPG</a></li>
+                <li><a href="#"> Xe Nâng Reach Truck</a></li>
+                <li><a href="#"> Xe nâng xếp Pallet</a></li>
+                <li><a href="#"> Xe nâng trọng tải lớn</a></li>
+                <li><a href="#">Xe nâng Container </a></li>
+                <li><a href="#">Lựa chọn bộ công tác </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-center">
+
+    </div>
+    <div class="container-right">
+
+    </div>
+
+</div>
+</header>

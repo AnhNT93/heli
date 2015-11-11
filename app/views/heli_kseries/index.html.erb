@@ -1,0 +1,107 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Heli Kseries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Ten</th>
+      <!--<th>Gioithieu</th>-->
+      <!--<th>Hangsanxuat</th>-->
+      <!--<th>Model</th>-->
+      <!--<th>Kieudongco</th>-->
+      <!--<th>Taitrongnang</th>-->
+      <!--<th>Tamtaitrong</th>-->
+      <!--<th>Kieuhoatdong</th>-->
+      <!--<th>Chieucaocotnanglonnhat</th>-->
+      <!--<th>Chieucaonanglonnhat</th>-->
+      <!--<th>Chieucaonangtudo</th>-->
+      <!--<th>Chieucaokhungnang</th>-->
+      <!--<th>Chieucaocoso</th>-->
+      <!--<th>Chieucaocosovoicangnang</th>-->
+      <!--<th>Chieudaicoso</th>-->
+      <!--<th>Chieurongcoso</th>-->
+      <!--<th>Kichthuoctutamcautruoctoikhungnang</th>-->
+      <!--<th>Kichthuoctutamcausautoiduoixe</th>-->
+      <!--<th>Khoangcachtrucbanhxe</th>-->
+      <!--<th>Khoangsanggamxe</th>-->
+      <!--<th>Khoangcachvetlopxe</th>-->
+      <!--<th>Bankinhquavong</th>-->
+      <!--<th>Bankinhquaynhonhat</th>-->
+      <!--<th>Gocnghiengcotnang</th>-->
+      <!--<th>Kichthuoccangnang</th>-->
+      <!--<th>Tocdodichuyenlonnhat</th>-->
+      <!--<th>Tocdonang</th>-->
+      <!--<th>Todoha</th>-->
+      <!--<th>Lucnanglonnhat</th>-->
+      <!--<th>Khanangleodoc</th>-->
+      <!--<th>Diennangsudung</th>-->
+      <!--<th>Coloptruoc</th>-->
+      <!--<th>Colopsau</th>-->
+      <!--<th>Tutrong</th>-->
+      <!--<th>Modeldongco</th>-->
+      <!--<th>Congsuat</th>-->
+      <!--<th>Momenxoan</th>-->
+      <!--<th>Dungtichbuongdot</th>-->
+      <!--<th>Binhchuanhienlieu</th>-->
+      <!--<th>Sodichuyen</th>-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @heli_kseries.each do |heli_kseries| %>
+      <tr>
+        <td><%= heli_kseries.type_id %></td>
+        <td><%= heli_kseries.ten %></td>
+        <!--<td><%= heli_kseries.gioiThieu %></td>-->
+        <!--<td><%= heli_kseries.hangSanXuat %></td>-->
+        <!--<td><%= heli_kseries.model %></td>-->
+        <!--<td><%= heli_kseries.kieuDongCo %></td>-->
+        <!--<td><%= heli_kseries.taiTrongNang %></td>-->
+        <!--<td><%= heli_kseries.tamTaiTrong %></td>-->
+        <!--<td><%= heli_kseries.kieuHoatDong %></td>-->
+        <!--<td><%= heli_kseries.chieuCaoCotNangLonNhat %></td>-->
+        <!--<td><%= heli_kseries.chieuCaoNangLonNhat %></td>-->
+        <!--<td><%= heli_kseries.chieuCaoNangTuDo %></td>-->
+        <!--<td><%= heli_kseries.chieuCaoKhungNang %></td>-->
+        <!--<td><%= heli_kseries.chieuCaoCoSo %></td>-->
+        <!--<td><%= heli_kseries.chieuCaoCoSoVoiCangNang %></td>-->
+        <!--<td><%= heli_kseries.chieuDaiCoSo %></td>-->
+        <!--<td><%= heli_kseries.chieuRongCoSo %></td>-->
+        <!--<td><%= heli_kseries.kichThuocTuTamCauTruocToiKhungNang %></td>-->
+        <!--<td><%= heli_kseries.kichThuocTuTamCauSauToiDuoiXe %></td>-->
+        <!--<td><%= heli_kseries.khoangCachTrucBanhXe %></td>-->
+        <!--<td><%= heli_kseries.khoangSangGamXe %></td>-->
+        <!--<td><%= heli_kseries.khoangCachVetLopXe %></td>-->
+        <!--<td><%= heli_kseries.banKinhQuaVong %></td>-->
+        <!--<td><%= heli_kseries.banKinhQuayNhoNhat %></td>-->
+        <!--<td><%= heli_kseries.gocNghiengCotNang %></td>-->
+        <!--<td><%= heli_kseries.kichThuocCangNang %></td>-->
+        <!--<td><%= heli_kseries.tocDoDiChuyenLonNhat %></td>-->
+        <!--<td><%= heli_kseries.tocDoNang %></td>-->
+        <!--<td><%= heli_kseries.toDoHa %></td>-->
+        <!--<td><%= heli_kseries.lucNangLonNhat %></td>-->
+        <!--<td><%= heli_kseries.khaNangLeoDoc %></td>-->
+        <!--<td><%= heli_kseries.dienNangSuDung %></td>-->
+        <!--<td><%= heli_kseries.coLopTruoc %></td>-->
+        <!--<td><%= heli_kseries.coLopSau %></td>-->
+        <!--<td><%= heli_kseries.tuTrong %></td>-->
+        <!--<td><%= heli_kseries.modelDongCo %></td>-->
+        <!--<td><%= heli_kseries.congSuat %></td>-->
+        <!--<td><%= heli_kseries.moMenXoan %></td>-->
+        <!--<td><%= heli_kseries.dungTichBuongDot %></td>-->
+        <!--<td><%= heli_kseries.binhChuaNhienLieu %></td>-->
+        <!--<td><%= heli_kseries.soDiChuyen %></td>-->
+        <td><%= link_to 'Show', heli_kseries %></td>
+        <td><%= link_to 'Edit', edit_heli_kseries_path(heli_kseries) %></td>
+        <td><%= link_to 'Destroy', heli_kseries, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Heli kseries', new_heli_kseries_path %>

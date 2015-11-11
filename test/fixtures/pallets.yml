@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type_id: 1
+  ten: MyString
+  gioiThieu: MyString
+  nhaSanXuat: MyString
+  model: MyString
+  trongTai: 1
+  trongTamTai: 
+  tocDoNang: MyString
+  chieuCaoNangTieuChuan: 1
+  tocDoDiChuyen: MyString
+  banKinhQuayVongToiThieu: MyString
+  khaNangLeoDoc: 1
+  loaiDieuKhienLai: MyString
+  motoLai: 1.5
+  motoBom: 1.5
+  acQuy: MyString
+  kichThuocCangNang: MyString
+  coLop: MyString
+  tongKhoiLuong: 1
+  tongChieuDai: MyString
+  tongChieuRong: 1
+
+two:
+  type_id: 1
+  ten: MyString
+  gioiThieu: MyString
+  nhaSanXuat: MyString
+  model: MyString
+  trongTai: 1
+  trongTamTai: 
+  tocDoNang: MyString
+  chieuCaoNangTieuChuan: 1
+  tocDoDiChuyen: MyString
+  banKinhQuayVongToiThieu: MyString
+  khaNangLeoDoc: 1
+  loaiDieuKhienLai: MyString
+  motoLai: 1.5
+  motoBom: 1.5
+  acQuy: MyString
+  kichThuocCangNang: MyString
+  coLop: MyString
+  tongKhoiLuong: 1
+  tongChieuDai: MyString
+  tongChieuRong: 1

@@ -1,0 +1,105 @@
+<%= form_for(@reach_truck) do |f| %>
+  <% if @reach_truck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reach_truck.errors.count, "error") %> prohibited this reach_truck from being saved:</h2>
+
+      <ul>
+      <% @reach_truck.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type_id %><br>
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ten %><br>
+    <%= f.text_field :ten %>
+  </div>
+  <div class="field">
+    <%= f.label :gioiThieu %><br>
+    <%= f.text_field :gioiThieu %>
+  </div>
+  <div class="field">
+    <%= f.label :nhaSanXuat %><br>
+    <%= f.text_field :nhaSanXuat %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :trongTai %><br>
+    <%= f.number_field :trongTai %>
+  </div>
+  <div class="field">
+    <%= f.label :trongTamTai %><br>
+    <%= f.number_field :trongTamTai %>
+  </div>
+  <div class="field">
+    <%= f.label :tocDoNang %><br>
+    <%= f.text_field :tocDoNang %>
+  </div>
+  <div class="field">
+    <%= f.label :chieuCaoNangTieuChuan %><br>
+    <%= f.number_field :chieuCaoNangTieuChuan %>
+  </div>
+  <div class="field">
+    <%= f.label :tocDoDiChuyen %><br>
+    <%= f.text_field :tocDoDiChuyen %>
+  </div>
+  <div class="field">
+    <%= f.label :banKinhQuayVongToiThieu %><br>
+    <%= f.number_field :banKinhQuayVongToiThieu %>
+  </div>
+  <div class="field">
+    <%= f.label :khaNangLeoDoc %><br>
+    <%= f.text_field :khaNangLeoDoc %>
+  </div>
+  <div class="field">
+    <%= f.label :loaiDieuKhienLai %><br>
+    <%= f.text_field :loaiDieuKhienLai %>
+  </div>
+  <div class="field">
+    <%= f.label :loaiDieuKhienNang %><br>
+    <%= f.text_field :loaiDieuKhienNang %>
+  </div>
+  <div class="field">
+    <%= f.label :motoLai %><br>
+    <%= f.text_field :motoLai %>
+  </div>
+  <div class="field">
+    <%= f.label :motoBom %><br>
+    <%= f.text_field :motoBom %>
+  </div>
+  <div class="field">
+    <%= f.label :acQuy %><br>
+    <%= f.text_field :acQuy %>
+  </div>
+  <div class="field">
+    <%= f.label :kichThuocCangNang %><br>
+    <%= f.text_field :kichThuocCangNang %>
+  </div>
+  <div class="field">
+    <%= f.label :coLop %><br>
+    <%= f.text_field :coLop %>
+  </div>
+  <div class="field">
+    <%= f.label :tongKhoiLuong %><br>
+    <%= f.number_field :tongKhoiLuong %>
+  </div>
+  <div class="field">
+    <%= f.label :tongChieuDai %><br>
+    <%= f.number_field :tongChieuDai %>
+  </div>
+  <div class="field">
+    <%= f.label :tongChieuRong %><br>
+    <%= f.number_field :tongChieuRong %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

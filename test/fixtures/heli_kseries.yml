@@ -1,0 +1,87 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type_id: 1
+  ten: MyString
+  gioiThieu: MyString
+  hangSanXuat: MyString
+  model: 
+  kieuDongCo: MyString
+  taiTrongNang: 1
+  tamTaiTrong: 1
+  kieuHoatDong: MyString
+  chieuCaoCotNangLonNhat: 1
+  chieuCaoNangLonNhat: 1
+  chieuCaoNangTuDo: 1
+  chieuCaoKhungNang: 1
+  chieuCaoCoSo: 1
+  ChieuCaoCoSoVoiCangNang: 1
+  chieuDaiCoSo: 
+  chieuRongCoSo: 1
+  kichThuocTuTamCauTruocToiKhungNang: 1
+  kichThuocTuTamCauSauToiDuoiXe: 1
+  khoangCachTrucBanhXe: 
+  khoangSangGamXe: 1
+  khoangCachVetLopXe: MyString
+  banKinhQuaVong: 1
+  banKinhQuayNhoNhat: 1
+  gocNghiengCotNang: MyString
+  kichThuocCangNang: MyString
+  tocDoDiChuyenLonNhat: MyString
+  tocDoNang: MyString
+  toDoHa: MyString
+  lucNangLonNhat: MyString
+  khaNangLeoDoc: MyString
+  DienNangSuDung: MyString
+  coLopTruoc: MyString
+  coLopSau: MyString
+  tuTrong: 
+  modelDongCo: MyString
+  congSuat: MyString
+  moMenXoan: MyString
+  dungTichBuongDot: 
+  binhChuaNhienLieu: 1
+  soDiChuyen: MyString
+
+two:
+  type_id: 1
+  ten: MyString
+  gioiThieu: MyString
+  hangSanXuat: MyString
+  model: 
+  kieuDongCo: MyString
+  taiTrongNang: 1
+  tamTaiTrong: 1
+  kieuHoatDong: MyString
+  chieuCaoCotNangLonNhat: 1
+  chieuCaoNangLonNhat: 1
+  chieuCaoNangTuDo: 1
+  chieuCaoKhungNang: 1
+  chieuCaoCoSo: 1
+  ChieuCaoCoSoVoiCangNang: 1
+  chieuDaiCoSo: 
+  chieuRongCoSo: 1
+  kichThuocTuTamCauTruocToiKhungNang: 1
+  kichThuocTuTamCauSauToiDuoiXe: 1
+  khoangCachTrucBanhXe: 
+  khoangSangGamXe: 1
+  khoangCachVetLopXe: MyString
+  banKinhQuaVong: 1
+  banKinhQuayNhoNhat: 1
+  gocNghiengCotNang: MyString
+  kichThuocCangNang: MyString
+  tocDoDiChuyenLonNhat: MyString
+  tocDoNang: MyString
+  toDoHa: MyString
+  lucNangLonNhat: MyString
+  khaNangLeoDoc: MyString
+  DienNangSuDung: MyString
+  coLopTruoc: MyString
+  coLopSau: MyString
+  tuTrong: 
+  modelDongCo: MyString
+  congSuat: MyString
+  moMenXoan: MyString
+  dungTichBuongDot: 
+  binhChuaNhienLieu: 1
+  soDiChuyen: MyString

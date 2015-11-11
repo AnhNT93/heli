@@ -4,28 +4,18 @@
   <title> Project1</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <%= csrf_meta_tags %>
   <%= render "layouts/shim" %>
 </head>
 <body>
   <%= render "layouts/header" %>
-  <div class="row">
-    <!-- <div class="col-md-3">
-      <%= render "layouts/menu_left" %>  
-    </div> -->
-    
-    
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      <% end %>
-      <%= yield %>
-    
-    <!-- <div class="col-md-2">
-      <%= render "layouts/menu_right" %>  
-    </div>
- -->
+  <div style="margin-top: 100px; margin-left: 170px; margin-bottom: 100px">
+  <% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+  <% end %>
+  <%= yield %>
   </div>
-  
   <%= render "layouts/footer" %>
 </body>
 </html>

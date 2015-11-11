@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing New Helis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @new_helis.each do |new_heli| %>
+      <tr>
+        <td><%= link_to 'Show', new_heli %></td>
+        <td><%= link_to 'Edit', edit_new_heli_path(new_heli) %></td>
+        <td><%= link_to 'Destroy', new_heli, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New New heli', new_new_heli_path %>

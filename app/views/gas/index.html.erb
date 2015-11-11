@@ -1,0 +1,109 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Ten</th>
+      <th>Gioithieu</th>
+      <th>Nhasanxuat</th>
+      <th>Model</th>
+      <th>Taitrongnang</th>
+      <th>Trongtamtai</th>
+      <th>Loainhienlieu</th>
+      <th>Kieuxe</th>
+      <th>Loailop</th>
+      <th>Sobanhxe</th>
+      <th>Chieucaolonnhat</th>
+      <th>Khoangnangtudo</th>
+      <th>Kichthuoccangnang</th>
+      <th>Gocnghiengkhungnang</th>
+      <th>Chieudaixe</th>
+      <th>Chieurongxe</th>
+      <th>Chieucaokhungnang</th>
+      <th>Chieucaokhungnangkhinangcaonhat</th>
+      <th>Chieucaocabin</th>
+      <th>Bankinhvongquaytoithieu</th>
+      <th>Tocdodichuyenlonnhat</th>
+      <th>Tocdonang</th>
+      <th>Tocdoha</th>
+      <th>Ungsuatlonnhat</th>
+      <th>Khanangleodoc</th>
+      <th>Tongkhoiluong</th>
+      <th>Phanbokhoiluongkhicotai</th>
+      <th>Phanbokhoiluongkhikhongcotai</th>
+      <th>Kichthuoclopxetruoc</th>
+      <th>Kichthuoclopxesau</th>
+      <th>Vetbanhxe</th>
+      <th>Khoangcachtamlop</th>
+      <th>Khoangsanggamxe</th>
+      <th>Hethongphanh</th>
+      <th>Acquy</th>
+      <th>Loaidongco</th>
+      <th>Congsuat</th>
+      <th>Momem</th>
+      <th>Soxylah</th>
+      <th>Dungtichbuongchay</th>
+      <th>Dungtichbinhnhienlieu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gas.each do |ga| %>
+      <tr>
+        <td><%= ga.type_id %></td>
+        <td><%= ga.ten %></td>
+        <td><%= ga.gioiThieu %></td>
+        <td><%= ga.nhaSanXuat %></td>
+        <td><%= ga.model %></td>
+        <td><%= ga.taiTrongNang %></td>
+        <td><%= ga.trongTamTai %></td>
+        <td><%= ga.loaiNhienLieu %></td>
+        <td><%= ga.kieuXe %></td>
+        <td><%= ga.loaiLop %></td>
+        <td><%= ga.soBanhXe %></td>
+        <td><%= ga.chieuCaoLonNhat %></td>
+        <td><%= ga.khoangNangTuDo %></td>
+        <td><%= ga.kichThuocCangNang %></td>
+        <td><%= ga.gocNghiengKhungNang %></td>
+        <td><%= ga.chieuDaiXe %></td>
+        <td><%= ga.chieuRongXe %></td>
+        <td><%= ga.chieuCaoKhungNang %></td>
+        <td><%= ga.chieuCaoKhungNangKhiNangCaoNhat %></td>
+        <td><%= ga.chieuCaoCaBin %></td>
+        <td><%= ga.banKinhVongQuayToiThieu %></td>
+        <td><%= ga.tocDoDiChuyenLonNhat %></td>
+        <td><%= ga.tocDoNang %></td>
+        <td><%= ga.tocDoHa %></td>
+        <td><%= ga.ungSuatLonNhat %></td>
+        <td><%= ga.khaNangLeoDoc %></td>
+        <td><%= ga.tongKhoiLuong %></td>
+        <td><%= ga.phanBoKhoiLuongKhiCoTai %></td>
+        <td><%= ga.phanBoKhoiLuongKhiKhongCoTai %></td>
+        <td><%= ga.kichThuocLopXeTruoc %></td>
+        <td><%= ga.kichThuocLopXeSau %></td>
+        <td><%= ga.vetBanhXe %></td>
+        <td><%= ga.khoangCachTamLop %></td>
+        <td><%= ga.khoangSangGamXe %></td>
+        <td><%= ga.heThongPhanh %></td>
+        <td><%= ga.acQUy %></td>
+        <td><%= ga.loaiDongCo %></td>
+        <td><%= ga.congSuat %></td>
+        <td><%= ga.momem %></td>
+        <td><%= ga.soXyLah %></td>
+        <td><%= ga.dungTichBuongChay %></td>
+        <td><%= ga.dungTichBinhNhienLieu %></td>
+        <td><%= link_to 'Show', ga %></td>
+        <td><%= link_to 'Edit', edit_ga_path(ga) %></td>
+        <td><%= link_to 'Destroy', ga, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ga', new_ga_path %>

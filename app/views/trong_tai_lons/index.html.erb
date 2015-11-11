@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Trong Tai Lons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Ten</th>
+      <th>Gioithieu</th>
+      <th>Nhasanxuat</th>
+      <th>Model</th>
+      <th>Taitrongnang</th>
+      <th>Trongtamtai</th>
+      <th>Tocdonang</th>
+      <th>Chieucaonanglonnhat</th>
+      <th>Tocdodichuyen</th>
+      <th>Bankinhquayvongtoithieu</th>
+      <th>Khanangleodoc</th>
+      <th>Suckeo</th>
+      <th>Chieucaokhungnang</th>
+      <th>Chieucaokhungnangkhinangcaonhat</th>
+      <th>Kichthuoccangnang</th>
+      <th>Khoangdichchuyencangnang</th>
+      <th>Colopxe</th>
+      <th>Loaidongco</th>
+      <th>Congsuat</th>
+      <th>Momen</th>
+      <th>Chieudaixe</th>
+      <th>Chieurong</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trong_tai_lons.each do |trong_tai_lon| %>
+      <tr>
+        <td><%= trong_tai_lon.type_id %></td>
+        <td><%= trong_tai_lon.ten %></td>
+        <td><%= trong_tai_lon.gioiThieu %></td>
+        <td><%= trong_tai_lon.nhaSanXuat %></td>
+        <td><%= trong_tai_lon.model %></td>
+        <td><%= trong_tai_lon.taitrongNang %></td>
+        <td><%= trong_tai_lon.trongTamTai %></td>
+        <td><%= trong_tai_lon.tocDoNang %></td>
+        <td><%= trong_tai_lon.chieuCaoNangLonNhat %></td>
+        <td><%= trong_tai_lon.tocDoDiChuyen %></td>
+        <td><%= trong_tai_lon.banKinhQuayVongToiThieu %></td>
+        <td><%= trong_tai_lon.khaNangLeoDOc %></td>
+        <td><%= trong_tai_lon.sucKeo %></td>
+        <td><%= trong_tai_lon.chieuCaoKhungNang %></td>
+        <td><%= trong_tai_lon.chieuCaoKhungNangKhiNangCaoNhat %></td>
+        <td><%= trong_tai_lon.kichThuocCangNang %></td>
+        <td><%= trong_tai_lon.khoangDichChuyenCangNang %></td>
+        <td><%= trong_tai_lon.coLopXe %></td>
+        <td><%= trong_tai_lon.loaiDongCo %></td>
+        <td><%= trong_tai_lon.congSuat %></td>
+        <td><%= trong_tai_lon.momen %></td>
+        <td><%= trong_tai_lon.chieuDaiXe %></td>
+        <td><%= trong_tai_lon.chieuRong %></td>
+        <td><%= link_to 'Show', trong_tai_lon %></td>
+        <td><%= link_to 'Edit', edit_trong_tai_lon_path(trong_tai_lon) %></td>
+        <td><%= link_to 'Destroy', trong_tai_lon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trong tai lon', new_trong_tai_lon_path %>

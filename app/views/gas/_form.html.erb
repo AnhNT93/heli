@@ -1,0 +1,185 @@
+<%= form_for(@ga) do |f| %>
+  <% if @ga.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ga.errors.count, "error") %> prohibited this ga from being saved:</h2>
+
+      <ul>
+      <% @ga.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type_id %><br>
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ten %><br>
+    <%= f.text_field :ten %>
+  </div>
+  <div class="field">
+    <%= f.label :gioiThieu %><br>
+    <%= f.text_field :gioiThieu %>
+  </div>
+  <div class="field">
+    <%= f.label :nhaSanXuat %><br>
+    <%= f.text_field :nhaSanXuat %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :taiTrongNang %><br>
+    <%= f.number_field :taiTrongNang %>
+  </div>
+  <div class="field">
+    <%= f.label :trongTamTai %><br>
+    <%= f.number_field :trongTamTai %>
+  </div>
+  <div class="field">
+    <%= f.label :loaiNhienLieu %><br>
+    <%= f.text_field :loaiNhienLieu %>
+  </div>
+  <div class="field">
+    <%= f.label :kieuXe %><br>
+    <%= f.text_field :kieuXe %>
+  </div>
+  <div class="field">
+    <%= f.label :loaiLop %><br>
+    <%= f.text_field :loaiLop %>
+  </div>
+  <div class="field">
+    <%= f.label :soBanhXe %><br>
+    <%= f.text_field :soBanhXe %>
+  </div>
+  <div class="field">
+    <%= f.label :chieuCaoLonNhat %><br>
+    <%= f.number_field :chieuCaoLonNhat %>
+  </div>
+  <div class="field">
+    <%= f.label :khoangNangTuDo %><br>
+    <%= f.number_field :khoangNangTuDo %>
+  </div>
+  <div class="field">
+    <%= f.label :kichThuocCangNang %><br>
+    <%= f.text_field :kichThuocCangNang %>
+  </div>
+  <div class="field">
+    <%= f.label :gocNghiengKhungNang %><br>
+    <%= f.text_field :gocNghiengKhungNang %>
+  </div>
+  <div class="field">
+    <%= f.label :chieuDaiXe %><br>
+    <%= f.number_field :chieuDaiXe %>
+  </div>
+  <div class="field">
+    <%= f.label :chieuRongXe %><br>
+    <%= f.number_field :chieuRongXe %>
+  </div>
+  <div class="field">
+    <%= f.label :chieuCaoKhungNang %><br>
+    <%= f.number_field :chieuCaoKhungNang %>
+  </div>
+  <div class="field">
+    <%= f.label :chieuCaoKhungNangKhiNangCaoNhat %><br>
+    <%= f.number_field :chieuCaoKhungNangKhiNangCaoNhat %>
+  </div>
+  <div class="field">
+    <%= f.label :chieuCaoCaBin %><br>
+    <%= f.number_field :chieuCaoCaBin %>
+  </div>
+  <div class="field">
+    <%= f.label :banKinhVongQuayToiThieu %><br>
+    <%= f.number_field :banKinhVongQuayToiThieu %>
+  </div>
+  <div class="field">
+    <%= f.label :tocDoDiChuyenLonNhat %><br>
+    <%= f.text_field :tocDoDiChuyenLonNhat %>
+  </div>
+  <div class="field">
+    <%= f.label :tocDoNang %><br>
+    <%= f.text_field :tocDoNang %>
+  </div>
+  <div class="field">
+    <%= f.label :tocDoHa %><br>
+    <%= f.text_field :tocDoHa %>
+  </div>
+  <div class="field">
+    <%= f.label :ungSuatLonNhat %><br>
+    <%= f.text_field :ungSuatLonNhat %>
+  </div>
+  <div class="field">
+    <%= f.label :khaNangLeoDoc %><br>
+    <%= f.text_field :khaNangLeoDoc %>
+  </div>
+  <div class="field">
+    <%= f.label :tongKhoiLuong %><br>
+    <%= f.number_field :tongKhoiLuong %>
+  </div>
+  <div class="field">
+    <%= f.label :phanBoKhoiLuongKhiCoTai %><br>
+    <%= f.text_field :phanBoKhoiLuongKhiCoTai %>
+  </div>
+  <div class="field">
+    <%= f.label :phanBoKhoiLuongKhiKhongCoTai %><br>
+    <%= f.text_field :phanBoKhoiLuongKhiKhongCoTai %>
+  </div>
+  <div class="field">
+    <%= f.label :kichThuocLopXeTruoc %><br>
+    <%= f.text_field :kichThuocLopXeTruoc %>
+  </div>
+  <div class="field">
+    <%= f.label :kichThuocLopXeSau %><br>
+    <%= f.text_field :kichThuocLopXeSau %>
+  </div>
+  <div class="field">
+    <%= f.label :vetBanhXe %><br>
+    <%= f.number_field :vetBanhXe %>
+  </div>
+  <div class="field">
+    <%= f.label :khoangCachTamLop %><br>
+    <%= f.text_field :khoangCachTamLop %>
+  </div>
+  <div class="field">
+    <%= f.label :khoangSangGamXe %><br>
+    <%= f.number_field :khoangSangGamXe %>
+  </div>
+  <div class="field">
+    <%= f.label :heThongPhanh %><br>
+    <%= f.text_field :heThongPhanh %>
+  </div>
+  <div class="field">
+    <%= f.label :acQUy %><br>
+    <%= f.text_field :acQUy %>
+  </div>
+  <div class="field">
+    <%= f.label :loaiDongCo %><br>
+    <%= f.text_field :loaiDongCo %>
+  </div>
+  <div class="field">
+    <%= f.label :congSuat %><br>
+    <%= f.text_field :congSuat %>
+  </div>
+  <div class="field">
+    <%= f.label :momem %><br>
+    <%= f.text_field :momem %>
+  </div>
+  <div class="field">
+    <%= f.label :soXyLah %><br>
+    <%= f.number_field :soXyLah %>
+  </div>
+  <div class="field">
+    <%= f.label :dungTichBuongChay %><br>
+    <%= f.text_field :dungTichBuongChay %>
+  </div>
+  <div class="field">
+    <%= f.label :dungTichBinhNhienLieu %><br>
+    <%= f.number_field :dungTichBinhNhienLieu %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

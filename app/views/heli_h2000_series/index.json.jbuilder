@@ -1,0 +1,4 @@
+json.array!(@heli_h2000_series) do |heli_h2000_series|
+  json.extract! heli_h2000_series, :id, :nhaSanXuat, :loaiXe, :taiTrongNang, :trongTamTai, :loaiNhienLieu, :kieuXe, :loaiLop, :soBanhXe, :chieuCaoNangLonNhat, :khoangNangTuDo, :kichThuocCangNang, :gocNghiengKhungNang, :chieuDaiXeCoCangNang, :chieuRongXe, :chieuCaoKhungNang, :chieuCaoKhungNangKhiNangCaoNhat, :chieuCaoCabin, :banKinhVongQuayToiThieu, :tocDoDiChuyenLonNhat, :tocDoNang, :tocDoHa, :ungSuatLonNhat, :khaNangLeoDoc, :tongKhoiLuong, :phanBoKhoiLuongKhiCoTai, :phanBoKhoiLuongKhiKhongTai, :kichThuocLopXeTruoc, :kichThuocLopXeSau, :chieuDaiCoSo, :khoangCachTamLop, :khoangSangGamXe, :heThongPhanh, :acQuy, :loaiDongCo, :congSuat, :moMen, :soXyLanh, :dungTichBuongChay, :dungTichBinhNhienLieu
+  json.url heli_h2000_series_url(heli_h2000_series, format: :json)
+end

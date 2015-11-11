@@ -1,0 +1,97 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Heli Dc4banhs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Ten</th>
+      <th>Gioithieu</th>
+      <th>Nhasanxuat</th>
+      <th>Model</th>
+      <th>Trongtainang</th>
+      <th>Trongtamtai</th>
+      <th>Chieucaonangtoida</th>
+      <th>Tocdonang</th>
+      <th>Tocdoha</th>
+      <th>Tocdodichueyntoida</th>
+      <th>Bankinhquayvongtoithieu</th>
+      <th>Khanangleodoccotai</th>
+      <th>Chieucaokhungnag</th>
+      <th>Gocnghieng</th>
+      <th>Loaidieukhienlai</th>
+      <th>Loaidieukhiennang</th>
+      <th>Motolai</th>
+      <th>Motobom</th>
+      <th>Acquy</th>
+      <th>Kichthuocacquy</th>
+      <th>Khoiluongacquy</th>
+      <th>Kichthuocloptruoc</th>
+      <th>Kichthuoclopsau</th>
+      <th>Tongkhoiluongbaogomcaacquy</th>
+      <th>Tongchieudaicacangnang</th>
+      <th>Tongchieuronglinteger</th>
+      <th>Chieucaocabin</th>
+      <th>Chieucaokhungnang</th>
+      <th>Chieucaokhinangcaonhat</th>
+      <th>Khoangdichuyentudocuakhungnang</th>
+      <th>Chieucaogiado</th>
+      <th>Khoangsanggamxe</th>
+      <th>Chieudaicoso</th>
+      <th>Khoangcachtam2lop</th>
+      <th>Kichthuoccangnang</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @heli_dc4banhs.each do |heli_dc4banh| %>
+      <tr>
+        <td><%= heli_dc4banh.type_id %></td>
+        <td><%= heli_dc4banh.ten %></td>
+        <td><%= heli_dc4banh.gioiThieu %></td>
+        <td><%= heli_dc4banh.nhaSanXuat %></td>
+        <td><%= heli_dc4banh.model %></td>
+        <td><%= heli_dc4banh.trongTaiNang %></td>
+        <td><%= heli_dc4banh.trongTamTai %></td>
+        <td><%= heli_dc4banh.chieuCaoNangToiDa %></td>
+        <td><%= heli_dc4banh.tocDoNang %></td>
+        <td><%= heli_dc4banh.tocDoHa %></td>
+        <td><%= heli_dc4banh.tocDoDiChueynToiDa %></td>
+        <td><%= heli_dc4banh.banKinhQuayVongToiThieu %></td>
+        <td><%= heli_dc4banh.khaNangLeoDocCoTai %></td>
+        <td><%= heli_dc4banh.chieuCaoKhungNag %></td>
+        <td><%= heli_dc4banh.gocNghieng %></td>
+        <td><%= heli_dc4banh.loaiDieuKhienLai %></td>
+        <td><%= heli_dc4banh.loaiDieuKhienNang %></td>
+        <td><%= heli_dc4banh.motoLai %></td>
+        <td><%= heli_dc4banh.motoBom %></td>
+        <td><%= heli_dc4banh.acQuy %></td>
+        <td><%= heli_dc4banh.kichThuocAcQuy %></td>
+        <td><%= heli_dc4banh.khoiLuongAcQuy %></td>
+        <td><%= heli_dc4banh.kichThuocLopTruoc %></td>
+        <td><%= heli_dc4banh.kichThuocLopSau %></td>
+        <td><%= heli_dc4banh.tongKhoiLuongBaoGomCaAcQuy %></td>
+        <td><%= heli_dc4banh.tongChieuDaiCaCangNang %></td>
+        <td><%= heli_dc4banh.tongChieuRongLinteger %></td>
+        <td><%= heli_dc4banh.chieuCaoCabin %></td>
+        <td><%= heli_dc4banh.chieuCaoKhungNang %></td>
+        <td><%= heli_dc4banh.chieuCaoKhiNangCaoNhat %></td>
+        <td><%= heli_dc4banh.khoangDiChuyenTuDoCuaKhungNang %></td>
+        <td><%= heli_dc4banh.chieuCaoGiaDo %></td>
+        <td><%= heli_dc4banh.khoangSangGamXe %></td>
+        <td><%= heli_dc4banh.chieuDaiCoSo %></td>
+        <td><%= heli_dc4banh.khoangCachTam2Lop %></td>
+        <td><%= heli_dc4banh.kichThuocCangNang %></td>
+        <td><%= link_to 'Show', heli_dc4banh %></td>
+        <td><%= link_to 'Edit', edit_heli_dc4banh_path(heli_dc4banh) %></td>
+        <td><%= link_to 'Destroy', heli_dc4banh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Heli dc4banh', new_heli_dc4banh_path %>

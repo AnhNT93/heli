@@ -1,0 +1,1 @@
+json.extract! @heli_ac4banh, :id, :type_id, :ten, :gioiThieu, :nhaSanXuat, :model, :taiTrongNang, :trongTamTai, :tongKhoiLuong, :tongChieuDai, :tongChieuRong, :chieuCaoCabin, :baKinhQuayVOngToiThieu, :tocDoDiChuyen, :tocDoNang, :khaNangLeoDocCoTai, :moTo, :acQuy, :chieuCaoNang, :gocNghieng, :khoangNangTuDo, :chieuDaiCoSo, :kichThuocCangNang, :coLop, :created_at, :updated_at

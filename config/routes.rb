@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
+  resources :new_helis
+  resources :diesel_helis
+  resources :containers
+  resources :trong_tai_lons
+  resources :pallets
+  resources :reach_trucks
+  resources :gas
+  resources :heli3banhs
+  resources :heli_dc4banhs
+  resources :heli_ac4banhs
+  resources :heli_gseries
+  resources :heli_kseries
+  resources :heli_h2000_series
   resources :forklifts
   resources :types do
-    resources :forklifts
-  end
+    end
   root 'static_pages#home'
 
   devise_for :users, :path => 'admin', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup'}
