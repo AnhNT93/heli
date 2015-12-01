@@ -1,24 +1,23 @@
 Rails.application.routes.draw do
-  resources :new_helis
-  resources :diesel_helis
-  resources :containers
-  resources :trong_tai_lons
-  resources :pallets
-  resources :reach_trucks
-  resources :gas
-  resources :heli3banhs
-  resources :heli_dc4banhs
-  resources :heli_ac4banhs
-  resources :heli_gseries
-  resources :heli_kseries
-  resources :heli_h2000_series
-  resources :forklifts
-  resources :types do
+  
+  scope "(:locale)", locale: /vi|cn/ do
+    resources :san_phams do
+      collection do
+        get 'search_result'
+      end
     end
-  root 'static_pages#home'
-
-  devise_for :users, :path => 'admin', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup'}
-
+    resources :types
+    root 'san_phams#index'
+    get 'static_pages/phu_tung'
+    get 'static_pages/gmap'
+    get 'static_pages/gioi_thieu'
+    get 'static_pages/dich_vu_ki_thuat'
+    get 'static_pages/bo_cong_tac'
+    get 'static_pages/lien_he'
+    resources :tin_tucs
+    match '/contacts', to: 'contacts#new', via: 'get'
+    resources "contacts", only: [:new, :create]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

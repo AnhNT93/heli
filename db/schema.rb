@@ -11,425 +11,99 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110162824) do
+ActiveRecord::Schema.define(version: 20151126114328) do
 
-  create_table "containers", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "model"
-    t.string   "taiTrongNang"
-    t.string   "trongTamTai"
-    t.string   "soHang"
-    t.string   "tocDoNang"
-    t.string   "tocDoDiChuyen"
-    t.integer  "banKinhQuayVongToiThieu"
-    t.integer  "khaNangLeoDoc"
-    t.integer  "lucKeo"
-    t.integer  "chieuCaoCanang"
-    t.integer  "chieuConCanNangKhiNangHetCo"
-    t.string   "lopXe"
-    t.string   "dongCo"
-    t.string   "congSuatLstring"
-    t.string   "momen"
-    t.integer  "tongChieuDai"
-    t.integer  "tongChieuRong"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "image"
+  create_table "san_phams", force: :cascade do |t|
+    t.integer  "type_id",                                       limit: 4
+    t.string   "ten",                                           limit: 255
+    t.string   "nha_san_xuat",                                  limit: 255
+    t.string   "model",                                         limit: 255
+    t.string   "kieu_dong_co",                                  limit: 255
+    t.string   "kieu_hoat_dong",                                limit: 255
+    t.string   "so_di_chuyen",                                  limit: 255
+    t.string   "tai_trong_nang",                                limit: 255
+    t.string   "tam_tai_trong",                                 limit: 255
+    t.string   "loai_lop",                                      limit: 255
+    t.string   "so_banh_xe_truoc_sau",                          limit: 255
+    t.integer  "chieu_cao_nang_lon_nhat",                       limit: 4
+    t.integer  "chieu_cao_nang_tu_do",                          limit: 4
+    t.integer  "chieu_cao_khung_nang",                          limit: 4
+    t.integer  "chieu_cao_co_so",                               limit: 4
+    t.integer  "chieu_dai_co_so_voi_cang_nang",                 limit: 4
+    t.integer  "chieu_dai_co_so",                               limit: 4
+    t.integer  "chieu_rong_co_so",                              limit: 4
+    t.integer  "khoang_cach_truc_banh_xe",                      limit: 4
+    t.integer  "khoang_sang_gam_xe",                            limit: 4
+    t.integer  "ban_kinh_vong_quay",                            limit: 4
+    t.integer  "ban_kinh_vong_quay_nho_nhat",                   limit: 4
+    t.string   "goc_nghieng_cot_nang",                          limit: 255
+    t.string   "kich_thuoc_cang_nang_dai_rong_day",             limit: 255
+    t.string   "toc_do_di_chuyen_lon_nhat_co_tai_va_khong_tai", limit: 255
+    t.string   "toc_do_nang_co_tai_va_khong_tai",               limit: 255
+    t.string   "toc_do_ha_co_tai_va_khong_tai",                 limit: 255
+    t.string   "kha_nang_leo_doc_co_tai_va_khong_tai",          limit: 255
+    t.string   "co_lop_truoc",                                  limit: 255
+    t.string   "co_lop_sau",                                    limit: 255
+    t.integer  "tu_trong",                                      limit: 4
+    t.string   "model_dong_co",                                 limit: 255
+    t.string   "cong_suat_vong_quay",                           limit: 255
+    t.float    "dung_tich_buong_dot",                           limit: 24
+    t.integer  "binh_chua_nhien_lieu",                          limit: 4
+    t.float    "mo_to_di_chuyen",                               limit: 24
+    t.float    "mo_to_bom",                                     limit: 24
+    t.string   "he_thong_dieu_khien_mo_to_di_chuyen",           limit: 255
+    t.string   "he_thong_dieu_khien_motor_bom",                 limit: 255
+    t.string   "he_thong_phanh",                                limit: 255
+    t.float    "ap_saut_dau_dinh_muc",                          limit: 24
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
+    t.string   "dien_nang_su_dung",                             limit: 255
+    t.string   "image",                                         limit: 255
+    t.string   "ten_cn",                                        limit: 255
+    t.string   "so_bac",                                        limit: 255
+    t.string   "khoang_dich_chuyen_cang",                       limit: 255
+    t.string   "luc_keo",                                       limit: 255
+    t.integer  "chieu_cao_cabin",                               limit: 4
+    t.integer  "chieu_cao_khung_nang_khi_nang_cao_nhat",        limit: 4
+    t.string   "momen",                                         limit: 255
+    t.integer  "chieu_cao_nang_tieu_chuan",                     limit: 4
+    t.string   "loai_dieu_khien_lai",                           limit: 255
+    t.string   "mo_to_lai",                                     limit: 255
+    t.string   "mo_to_nang",                                    limit: 255
+    t.string   "ac_quy",                                        limit: 255
+    t.integer  "tong_khoi_luong",                               limit: 4
   end
 
-  create_table "diesel_helis", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "gas", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "model"
-    t.integer  "taiTrongNang"
-    t.integer  "trongTamTai"
-    t.string   "loaiNhienLieu"
-    t.string   "kieuXe"
-    t.string   "loaiLop"
-    t.string   "soBanhXe"
-    t.integer  "chieuCaoLonNhat"
-    t.integer  "khoangNangTuDo"
-    t.string   "kichThuocCangNang"
-    t.string   "gocNghiengKhungNang"
-    t.integer  "chieuDaiXe"
-    t.integer  "chieuRongXe"
-    t.integer  "chieuCaoKhungNang"
-    t.integer  "chieuCaoKhungNangKhiNangCaoNhat"
-    t.integer  "chieuCaoCaBin"
-    t.integer  "banKinhVongQuayToiThieu"
-    t.string   "tocDoDiChuyenLonNhat"
-    t.string   "tocDoNang"
-    t.string   "tocDoHa"
-    t.string   "ungSuatLonNhat"
-    t.string   "khaNangLeoDoc"
-    t.integer  "tongKhoiLuong"
-    t.string   "phanBoKhoiLuongKhiCoTai"
-    t.string   "phanBoKhoiLuongKhiKhongCoTai"
-    t.string   "kichThuocLopXeTruoc"
-    t.string   "kichThuocLopXeSau"
-    t.integer  "vetBanhXe"
-    t.string   "khoangCachTamLop"
-    t.integer  "khoangSangGamXe"
-    t.string   "heThongPhanh"
-    t.string   "acQUy"
-    t.string   "loaiDongCo"
-    t.string   "congSuat"
-    t.string   "momem"
-    t.integer  "soXyLah"
-    t.float    "dungTichBuongChay"
-    t.integer  "dungTichBinhNhienLieu"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "image"
-  end
-
-  create_table "heli3banhs", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "loaiXe"
-    t.integer  "taiTrongNang"
-    t.integer  "trongTamTai"
-    t.integer  "tongKhoiLuong"
-    t.integer  "tongChieuDai"
-    t.integer  "tongChieuRong"
-    t.integer  "chieuCaoCabin"
-    t.integer  "banKinhVongQuayToiThieu"
-    t.string   "tocDoDiChuyen"
-    t.string   "tocDoNang"
-    t.integer  "khaNangLeoDocCoTai"
-    t.string   "moto"
-    t.string   "acQuy"
-    t.integer  "chieuCaoNang"
-    t.string   "gocNghieng"
-    t.string   "khoangNangTuDoLinteger"
-    t.integer  "chieuDaiCoCo"
-    t.string   "kichThuocCangNang"
-    t.string   "coLop"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image"
-  end
-
-  create_table "heli_ac4banhs", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "model"
-    t.integer  "taiTrongNang"
-    t.integer  "trongTamTai"
-    t.integer  "tongKhoiLuong"
-    t.integer  "tongChieuDai"
-    t.integer  "tongChieuRong"
-    t.integer  "chieuCaoCabin"
-    t.integer  "baKinhQuayVOngToiThieu"
-    t.string   "tocDoDiChuyen"
-    t.string   "tocDoNang"
-    t.integer  "khaNangLeoDocCoTai"
-    t.string   "moTo"
-    t.string   "acQuy"
-    t.integer  "chieuCaoNang"
-    t.string   "gocNghieng"
-    t.integer  "khoangNangTuDo"
-    t.integer  "chieuDaiCoSo"
-    t.string   "kichThuocCangNang"
-    t.string   "coLop"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "image"
-  end
-
-  create_table "heli_dc4banhs", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "model"
-    t.integer  "trongTaiNang"
-    t.integer  "trongTamTai"
-    t.integer  "chieuCaoNangToiDa"
-    t.string   "tocDoNang"
-    t.string   "tocDoHa"
-    t.integer  "tocDoDiChueynToiDa"
-    t.integer  "banKinhQuayVongToiThieu"
-    t.integer  "khaNangLeoDocCoTai"
-    t.integer  "chieuCaoKhungNag"
-    t.string   "gocNghieng"
-    t.string   "loaiDieuKhienLai"
-    t.string   "loaiDieuKhienNang"
-    t.float    "motoLai"
-    t.float    "motoBom"
-    t.string   "acQuy"
-    t.string   "kichThuocAcQuy"
-    t.integer  "khoiLuongAcQuy"
-    t.string   "kichThuocLopTruoc"
-    t.string   "kichThuocLopSau"
-    t.integer  "tongKhoiLuongBaoGomCaAcQuy"
-    t.integer  "tongChieuDaiCaCangNang"
-    t.string   "tongChieuRongLinteger"
-    t.integer  "chieuCaoCabin"
-    t.integer  "chieuCaoKhungNang"
-    t.integer  "chieuCaoKhiNangCaoNhat"
-    t.integer  "khoangDiChuyenTuDoCuaKhungNang"
-    t.integer  "chieuCaoGiaDo"
-    t.integer  "khoangSangGamXe"
-    t.integer  "chieuDaiCoSo"
-    t.string   "khoangCachTam2Lop"
-    t.string   "kichThuocCangNang"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-  end
-
-  create_table "heli_gseries", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "loaiXe"
-    t.integer  "taitrongNang"
-    t.integer  "trongTamTai"
-    t.string   "tocDoNang"
-    t.integer  "khoangDiChuyenTuDo"
-    t.string   "tocDoDiChuyen"
-    t.integer  "banKinhQuayVongToiThieu"
-    t.string   "khaNangLeoDoc"
-    t.string   "sucKeo"
-    t.integer  "chieuCaoCabin"
-    t.integer  "chieuCaoKhungNang"
-    t.integer  "chieuCaoNangToiDa"
-    t.string   "kichThuocCangNang"
-    t.string   "coLopXe"
-    t.string   "loaiDongCo"
-    t.string   "congSuat"
-    t.string   "moMen"
-    t.integer  "tongKhoiLuong"
-    t.integer  "chieuDaiXe"
-    t.integer  "chieuRongXe"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image"
-  end
-
-  create_table "heli_h2000_series", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "loaiXe"
-    t.integer  "taiTrongNang"
-    t.integer  "trongTamTai"
-    t.string   "loaiNhienLieu"
-    t.string   "kieuXe"
-    t.string   "loaiLop"
-    t.string   "soBanhXe"
-    t.integer  "chieuCaoNangLonNhat"
-    t.integer  "khoangNangTuDo"
-    t.string   "kichThuocCangNang"
-    t.string   "gocNghiengKhungNang"
-    t.integer  "chieuDaiXeCoCangNang"
-    t.integer  "chieuRongXe"
-    t.integer  "chieuCaoKhungNang"
-    t.integer  "chieuCaoKhungNangKhiNangCaoNhat"
-    t.integer  "chieuCaoCabin"
-    t.integer  "banKinhVongQuayToiThieu"
-    t.string   "tocDoDiChuyenLonNhat"
-    t.string   "tocDoNang"
-    t.string   "tocDoHa"
-    t.string   "ungSuatLonNhat"
-    t.string   "khaNangLeoDoc"
-    t.integer  "tongKhoiLuong"
-    t.string   "phanBoKhoiLuongKhiCoTai"
-    t.string   "phanBoKhoiLuongKhiKhongTai"
-    t.string   "kichThuocLopXeTruoc"
-    t.string   "kichThuocLopXeSau"
-    t.integer  "chieuDaiCoSo"
-    t.string   "khoangCachTamLop"
-    t.string   "khoangSangGamXe"
-    t.string   "heThongPhanh"
-    t.string   "acQuy"
-    t.string   "loaiDongCo"
-    t.string   "congSuat"
-    t.string   "moMen"
-    t.integer  "soXyLanh"
-    t.float    "dungTichBuongChay"
-    t.integer  "dungTichBinhNhienLieu"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "image"
-  end
-
-  create_table "heli_kseries", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "hangSanXuat"
-    t.string   "model"
-    t.string   "kieuDongCo"
-    t.integer  "taiTrongNang"
-    t.integer  "tamTaiTrong"
-    t.string   "kieuHoatDong"
-    t.integer  "chieuCaoCotNangLonNhat"
-    t.integer  "chieuCaoNangLonNhat"
-    t.integer  "chieuCaoNangTuDo"
-    t.integer  "chieuCaoKhungNang"
-    t.integer  "chieuCaoCoSo"
-    t.integer  "chieuCaoCoSoVoiCangNang"
-    t.integer  "chieuDaiCoSo"
-    t.integer  "chieuRongCoSo"
-    t.integer  "kichThuocTuTamCauTruocToiKhungNang"
-    t.integer  "kichThuocTuTamCauSauToiDuoiXe"
-    t.integer  "khoangCachTrucBanhXe"
-    t.integer  "khoangSangGamXe"
-    t.string   "khoangCachVetLopXe"
-    t.integer  "banKinhQuaVong"
-    t.integer  "banKinhQuayNhoNhat"
-    t.string   "gocNghiengCotNang"
-    t.string   "kichThuocCangNang"
-    t.string   "tocDoDiChuyenLonNhat"
-    t.string   "tocDoNang"
-    t.string   "toDoHa"
-    t.string   "lucNangLonNhat"
-    t.string   "khaNangLeoDoc"
-    t.string   "dienNangSuDung"
-    t.string   "coLopTruoc"
-    t.string   "coLopSau"
-    t.integer  "tuTrong"
-    t.string   "modelDongCo"
-    t.string   "congSuat"
-    t.string   "moMenXoan"
-    t.float    "dungTichBuongDot"
-    t.integer  "binhChuaNhienLieu"
-    t.string   "soDiChuyen"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.string   "image"
-  end
-
-  create_table "new_helis", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pallets", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "model"
-    t.integer  "trongTai"
-    t.integer  "trongTamTai"
-    t.string   "tocDoNang"
-    t.integer  "chieuCaoNangTieuChuan"
-    t.string   "tocDoDiChuyen"
-    t.string   "banKinhQuayVongToiThieu"
-    t.integer  "khaNangLeoDoc"
-    t.string   "loaiDieuKhienLai"
-    t.float    "motoLai"
-    t.float    "motoBom"
-    t.string   "acQuy"
-    t.string   "kichThuocCangNang"
-    t.string   "coLop"
-    t.integer  "tongKhoiLuong"
-    t.string   "tongChieuDai"
-    t.integer  "tongChieuRong"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image"
-  end
-
-  create_table "reach_trucks", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "model"
-    t.integer  "trongTai"
-    t.integer  "trongTamTai"
-    t.string   "tocDoNang"
-    t.integer  "chieuCaoNangTieuChuan"
-    t.string   "tocDoDiChuyen"
-    t.integer  "banKinhQuayVongToiThieu"
-    t.string   "khaNangLeoDoc"
-    t.string   "loaiDieuKhienLai"
-    t.string   "loaiDieuKhienNang"
-    t.float    "motoLai"
-    t.float    "motoBom"
-    t.string   "acQuy"
-    t.string   "kichThuocCangNang"
-    t.string   "coLop"
-    t.integer  "tongKhoiLuong"
-    t.integer  "tongChieuDai"
-    t.integer  "tongChieuRong"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image"
-  end
-
-  create_table "trong_tai_lons", force: :cascade do |t|
-    t.integer  "type_id"
-    t.string   "ten"
-    t.string   "gioiThieu"
-    t.string   "nhaSanXuat"
-    t.string   "model"
-    t.integer  "taitrongNang"
-    t.integer  "trongTamTai"
-    t.string   "tocDoNang"
-    t.integer  "chieuCaoNangLonNhat"
-    t.string   "tocDoDiChuyen"
-    t.integer  "banKinhQuayVongToiThieu"
-    t.integer  "khaNangLeoDOc"
-    t.string   "sucKeo"
-    t.integer  "chieuCaoKhungNang"
-    t.integer  "chieuCaoKhungNangKhiNangCaoNhat"
-    t.string   "kichThuocCangNang"
-    t.string   "khoangDichChuyenCangNang"
-    t.string   "coLopXe"
-    t.string   "loaiDongCo"
-    t.string   "congSuat"
-    t.string   "momen"
-    t.integer  "chieuDaiXe"
-    t.integer  "chieuRong"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "image"
+  create_table "tin_tucs", force: :cascade do |t|
+    t.string   "tieu_de",     limit: 255
+    t.string   "anh_tieu_de", limit: 255
+    t.text     "noi_dung",    limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "types", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "level"
-    t.integer  "parent"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string  "name",   limit: 255
+    t.integer "level",  limit: 4
+    t.integer "parent", limit: 4
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

@@ -1,0 +1,111 @@
+<div class="tab-pane fade in active" id="coban">
+    <div class="image_content">
+      <%= link_to image_tag(@san_pham.image_url),image_path(@san_pham.image_url), :rel => "shadowbox" %>
+      <br>
+      <br>
+
+      <%= link_to image_path(@san_pham.image_url), :rel => "shadowbox" do %>
+      <span  class="glyphicon glyphicon-zoom-in"></span>
+      <span>Xem ảnh lớn</span>
+      <% end %>
+    </div>
+    <div class="info_content">
+      <table cellpadding="0" cellspacing="0" border="0" >
+        <tr>
+          <td colspan="2">
+            <h2>
+              <% if t("language") == "vi"%>
+                <%= @san_pham.ten %>
+              <% elsif %>
+                <%= @san_pham.ten_cn %>
+              <% end %>
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <p class="gia_lienhe">
+              <%= t("san_pham.gia")%> : <%= t("san_pham.lien_he")%> : 0969.042.725
+            </p>
+            <p class="model">
+              <% if t("language") == "cn" %>
+              <%= @san_pham.model%> <%= t("san_pham.ten") %> - <%= @san_pham.tai_trong_nang.to_i/1000 %><%= t("san_pham.tan")%>
+              <% elsif %>
+              <%= t("san_pham.ten") %> <%= @san_pham.model%> - <%= @san_pham.tai_trong_nang.to_i/1000 %><%= t("san_pham.tan")%>
+              <% end %>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="info_fix">
+              <%= t("san_pham.model") %> :
+            </p>
+          </td>
+          <td>
+            <p>
+              <%= @san_pham.nha_san_xuat.split.map(&:capitalize).join(' ').split('eli').first %>eli
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="info_fix">
+              <%= t("san_pham.cong_suat") %> :
+            </p>
+          </td>
+          <td>
+            <p>
+              <%= @san_pham.cong_suat_vong_quay.split('/').first%> kw
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="info_fix">
+              <%= t("san_pham.dong_co") %> :
+            </p>
+          </td>
+          <td>
+            <p>
+              <% if @san_pham.kieu_dong_co.mb_chars.downcase.to_s["điện"] != nil %>
+                <%= t("san_pham.dong_co_dien") %>
+              <% elsif @san_pham.kieu_dong_co.mb_chars.downcase.to_s["ga"] != nil %>
+                <%= t("san_pham.dong_co_ga") %>
+              <% elsif @san_pham.kieu_dong_co.mb_chars.downcase.to_s["xăng"] != nil %>
+                <%= t("san_pham.dong_co_xang") %>
+              <% elsif @san_pham.kieu_dong_co.mb_chars.downcase.to_s["diesel"] != nil  %>
+                <%= t("san_pham.dong_co_diesel") %>
+              <% elsif %>
+                <%= @san_pham.kieu_dong_co%>
+              <% end %>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="info_fix">
+              <%= t("san_pham.tai_trong_nang") %> :
+            </p>
+          </td>
+          <td>
+            <p>
+              <%= @san_pham.tai_trong_nang%> kg
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="info_fix">
+              <%= t("san_pham.toc_do_di_chuyen") %> :
+            </p>
+          </td>
+          <td>
+            <p>
+              <%= @san_pham.toc_do_di_chuyen_lon_nhat_co_tai_va_khong_tai.split('/').first %> km/h
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>

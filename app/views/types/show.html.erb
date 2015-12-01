@@ -1,19 +1,48 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @type.name %>
-</p>
-
-<p>
-  <strong>Level:</strong>
-  <%= @type.level %>
-</p>
-
-<p>
-  <strong>Parent:</strong>
-  <%= @type.parent %>
-</p>
-
-<%= link_to 'Edit', edit_type_path(@type) %> |
-<%= link_to 'Back', types_path %>
+<% tmp=0%>
+<% @san_phams.each do |san_pham| %>
+<% if san_pham.type_id > tmp %>
+<div class="classify_sp">
+  <%= image_tag("image/forklift.png") %>
+  <div class="classify_sp_heading">
+    <% if san_pham.type_id == 2 %>
+    <%= t("loai_xe.h2000") %>
+    <% tmp =2 %>
+    <% elsif san_pham.type_id == 3 %>
+    <%= t("loai_xe.kseries") %>
+    <% tmp = 3%>
+    <% elsif san_pham.type_id == 4 %>
+    <%= t("loai_xe.gseries") %>
+    <% tmp = 4%>
+    <% elsif san_pham.type.id == 5 %>
+    <%= t("loai_xe.hseries") %>
+    <% tmp = 5%>
+    <% elsif san_pham.type_id == 7 %>
+    <%= t("loai_xe.ac4banh") %>
+    <% tmp = 7%>
+    <% elsif san_pham.type_id == 8 %>
+    <%= t("loai_xe.3banh") %>
+    <% tmp = 8%>
+    <% elsif san_pham.type_id == 9 %>
+    <%= t("loai_xe.xe_nang_gas") %>
+    <% tmp = 9%>
+    <% elsif san_pham.type_id == 10 %>
+    <%= t("loai_xe.xe_nang_reach_truck") %>
+    <% tmp = 10%>
+    <% elsif san_pham.type_id == 11 %>
+    <%= t("loai_xe.xe_nang_xep_pallet") %>
+    <% tmp = 11%>
+    <% elsif san_pham.type_id == 12 %>
+    <%= t("loai_xe.xe_nang_trong_tai_lon") %>
+    <% tmp = 12%>
+    <% elsif san_pham.type_id == 13 %>
+    <%= t("loai_xe.xe_nang_container") %>
+    <% tmp = 13%>
+    <% end %>
+  </div>
+</div>
+<% end %>
+<%= render san_pham %>
+<% end %>
+<div class="pagination_center">
+  <%= will_paginate @san_phams,renderer: BootstrapPagination::Rails %>
+</div>

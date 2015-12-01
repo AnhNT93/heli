@@ -1,4 +1,0 @@
-json.array!(@heli_kseries) do |heli_kseries|
-  json.extract! heli_kseries, :id, :type_id, :ten, :gioiThieu, :hangSanXuat, :model, :kieuDongCo, :taiTrongNang, :tamTaiTrong, :kieuHoatDong, :chieuCaoCotNangLonNhat, :chieuCaoNangLonNhat, :chieuCaoNangTuDo, :chieuCaoKhungNang, :chieuCaoCoSo, :ChieuCaoCoSoVoiCangNang, :chieuDaiCoSo, :chieuRongCoSo, :kichThuocTuTamCauTruocToiKhungNang, :kichThuocTuTamCauSauToiDuoiXe, :khoangCachTrucBanhXe, :khoangSangGamXe, :khoangCachVetLopXe, :banKinhQuaVong, :banKinhQuayNhoNhat, :gocNghiengCotNang, :kichThuocCangNang, :tocDoDiChuyenLonNhat, :tocDoNang, :toDoHa, :lucNangLonNhat, :khaNangLeoDoc, :DienNangSuDung, :coLopTruoc, :coLopSau, :tuTrong, :modelDongCo, :congSuat, :moMenXoan, :dungTichBuongDot, :binhChuaNhienLieu, :soDiChuyen
-  json.url heli_kseries_url(heli_kseries, format: :json)
-end

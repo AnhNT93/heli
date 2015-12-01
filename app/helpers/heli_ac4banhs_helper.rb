@@ -1,2 +1,0 @@
-module HeliAc4banhsHelper
-end

@@ -1,0 +1,19 @@
+<div class="box_sp">
+  <a href="#">
+    <%= link_to image_tag(san_pham.image_url), san_pham %>
+  </a>
+  <div class="line"></div>
+  <div class="box_namesp">
+    <a>
+      <% if t("language")=="vi" %>
+        <%= link_to san_pham.ten, san_pham %>
+      <% elsif %>
+        <%= link_to san_pham.ten_cn, san_pham %>
+      <% end %>
+    </a>
+  </div>
+  <div class="box_addsp">
+    <%= t("home.lien_he") %>: 0969.042.725
+  </div>
+  <%= link_to t("san_pham.chi_tiet"), san_pham, :class => "tuychon" %>
+</div>

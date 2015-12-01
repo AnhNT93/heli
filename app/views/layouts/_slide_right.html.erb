@@ -1,0 +1,55 @@
+<div class="container-right ">
+  <div class="new-content ">
+    <h3 class="menu_content_header"><%= t("menu_right.tin_moi") %></h3>
+    <marquee direction="up" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+      <ul>
+        <% tin_tuc_moi.each do |tin_tuc|%>
+        <li>
+          <%= link_to image_tag(tin_tuc.anh_tieu_de.url), tin_tuc %>
+          <%= link_to tin_tuc.tieu_de, tin_tuc %>
+        </li>
+        <% end %>
+      </ul>
+    </marquee>
+  </div>
+  <%= image_tag('logo/bong_menu.png')%>
+  <div class="container-right-video ">
+    <h3 class="menu_content_header"><%= t("menu_right.video") %></h3>
+    <div class="video_content">
+            <a href="https://www.youtube.com/embed/A7kkySr12LI" rel="shadowbox;width=640;height=385">
+              <%= image_tag("logo/image_1391315542.jpg", :width => "185", :height => "131")%>
+            </a>
+            </div>
+            <a href="https://www.youtube.com/embed/sXnNAvkZxCg" rel="shadowbox;width=640;height=385">
+            <span class="support_video video-link2 demo-link" >(Xem thêm video)</span>
+            </a>
+  </div>
+  <%= image_tag('logo/bong_menu.png')%>
+  <div class="hot_sp " >
+    <h3 class="menu_content_header"><%= t("menu_right.san_pham_ban_chay") %></h3>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <span class="glyphicon glyphicon-star-empty"></span>
+    <ul>
+      <% san_pham_ban_chay.each do |san_pham|%>
+      <li>
+        <%= link_to image_tag(san_pham.image_url), san_pham%>
+        <br>
+        <strong><% if t("language") == "cn" %>
+            <%= san_pham.ten_cn %>
+          <% elsif %>
+            <%= san_pham.ten %>    
+          <% end %></strong>
+        <br>
+        <strong class="denwa"><%= t("san_pham.lien_he")%>: 0969.042.725 </strong>
+  
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <%= image_tag("logo/bong_menu.png")%>
+</div>

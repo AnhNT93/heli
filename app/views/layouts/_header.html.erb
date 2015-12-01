@@ -1,26 +1,25 @@
 
-<header>
-<!--<script type="text/javascript" src="js/bootstrap.js"></script>-->
-
     <header>
         <div class="top-header clearfix">
             <div class="logo">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="pull-left">
-                                  <a href="#">
-                                    <%= link_to image_tag("logo/logo.png"),root_path %>
-                                  </a>
-                        </div>
-                    </div>
-                </div>
+
+              <a href="#">
+                <%= link_to image_tag("logo/logo.png"),root_path %>
+              </a>
+            </div>
+            <div class="phone_blink">
+                <span class="hotline"> <%= t("home.hotline")%>:</span>
+                <span class="blink_me">0969 042 725</span>
+            </div>
+            <div class="flag_lang">
+                <%= link_to image_tag("image/cn.png",:class => "china flag"), "/cn/", :class => "lang_flag"%>
+                <%= link_to image_tag("image/vn.png", :class => "vietnam flag"), "/vi/", :class => "lag_flag"%>
+                
             </div>
         </div>
-        <div class="nav1 clearfix">
-        </div>
+        
         <section class="slider">
             <div class="banner">
-                <div class="bannern">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
@@ -52,76 +51,79 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                </div>
             </div>
         </section>
         <div class="banner-menu">
         <div id="cssmenu" >
                     <ul id="nav">
-                        <li><a href="#">TRANG CHỦ </a></li>
-                        <li><a href="#">GIỚI THIỆU</a></li>
-                        <li>
-                            <a href="#">
-                                SẢN PHẨM <span class="caret"></span>
-                            </a>
+                        <li class = "z115"><%= link_to t("home.trang_chu"), root_path %></li>
+                        <li class = "z100"><%= link_to t("home.gioi_thieu"), static_pages_gioi_thieu_path %></li>
+                        <li class = "z125">
+                            <%= link_to root_path do %>
+                              <span ><%=t("home.san_pham") %></span>
+
+                              <span class="caret"></span>
+                            <% end %>
                             <ul >
-                              <li><%= link_to " Xe nâng hàng Diesel Heli", diesel_helis_path%></li>    
-                              <li><%= link_to " Xe nâng điện Heli", diesel_helis_path%></li>    
-                              <li><%= link_to " Xe nâng GAS/LPG", gas_path%></li>
-                              <li><%= link_to " Xe nâng Reach Truck", reach_trucks_path%></li>
-                              <li><%= link_to " Xe nâng xếp Pallet", pallets_path%></li>
-                              <li><%= link_to " Xe nâng trọng tải lớn", trong_tai_lons_path%></li>
-                              <li><%= link_to " Xe nâng Container", containers_path%></li>
+                              <% @types = Type.menu_level_1 %>
+                              <% @types.each do |type| %>
+                                <li>
+                                  <%= link_to type do%>
+                                    
+                                    <% if type.id == 1 %>
+                                    <%= link_to  type do%>
+                        <%=  image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_hang_diesel_heli") %>
+                      <% end %>
+                    <% elsif type.id == 6 %>
+                      <%= link_to type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_dien_heli") %>
+                      <% end %>
+                    <% elsif type.id == 9 %>
+                      <%= link_to type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_gas") %>
+                      <% end %>
+                    <% elsif type.id == 10 %>
+                      <%= link_to  type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_reach_truck") %>
+                      <% end %>
+                    <% elsif type.id == 11 %>
+                      <%= link_to  type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_xep_pallet") %>
+                      <% end %>
+                    <% elsif type.id == 12 %>
+                      <%= link_to type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_trong_tai_lon") %>
+                      <% end %> 
+                    <% elsif type.id == 13 %>
+                      <%= link_to  type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_container") %>
+                      <% end %>
+                                  <% end %>
+                                  <% end %>
+                                </li>    
+                              <% end %>
                             </ul>
                         </li>
-                        <li><a href="#">DỊCH VỤ KĨ THUẬT</a></li>
-                        <li><a href="#">PHỤ TÙNG</a></li>
-                        <li><a href="#">BẢN ĐỒ</a></li>
-                        <li><a href="#">LIÊN HỆ</a></li>
+                        <li class = "z155"><%= link_to t("home.dich_vu_ki_thuat"), static_pages_dich_vu_ki_thuat_path %></li>
+                        <li class = "z110"><%= link_to t("home.phu_tung"), static_pages_phu_tung_path %></li>
+                        <li class = "z95"><%= link_to t("home.ban_do"), static_pages_gmap_path %></li>
+                        <li class = "z95"><%= link_to t("home.lien_he"), static_pages_lien_he_path %></li>
 
                      </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search" size="9">
-                        </div>
-                        <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
-                    </form>
+                    <%= form_tag search_result_san_phams_path,{:method => 'get', :class => "navbar-form navbar-left"} do %>
+                        <%= text_field_tag :search, params[:search],class: "form-control", :placeholder => t("home.search") %>
+                        <%= button_tag(type: "submit", class: "btn btn-default glyphicon glyphicon-search") do %>
+                        <% end %>
+                    <% end %>
+                   
         </div>
         </div>
     </header>
-    <div class="container ">
-     <div class="container-left clearfix">
-        <div id="menu_content">
-            <ul>
-                <li><a href="#">Xe nâng hàng Diesel Heli</a>
-                    <ul class="sub-menu_content">
-                        <li><a href="#">Xe nâng hàng Heli H2000 Series</a></li>
-                        <li><a href="#">Xe nâng hàng Heli Kseries</a></li>
-                        <li><a href="#">Xe nâng hàng Heli Gseries</a></li>
-                    </ul></li>
-                <li><a href="#">Xe nâng Heli
-                    <ul class="sub-menu_content">
-                        <li><a href="#">Xe nâng điện Heli AC 4 bánh</a></li>
-                        <li><a href="#">Xe nâng điện Heli DC 4 bánh</a></li>
-                        <li><a href="#">Xe nâng điện Heli 3 bánh</a></li>
-                    </ul></a>
-
-                </li>
-                <li><a href="#">Xe nâng GAS/LPG</a></li>
-                <li><a href="#"> Xe Nâng Reach Truck</a></li>
-                <li><a href="#"> Xe nâng xếp Pallet</a></li>
-                <li><a href="#"> Xe nâng trọng tải lớn</a></li>
-                <li><a href="#">Xe nâng Container </a></li>
-                <li><a href="#">Lựa chọn bộ công tác </a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="container-center">
-
-    </div>
-    <div class="container-right">
-
-    </div>
-
-</div>
-</header>
+    
