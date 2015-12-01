@@ -364,8 +364,32 @@
     bottom: 0px;
     height: auto;
 }
-
-        /*tim kiem*/
+.tintin_table{
+    margin-top: 100px;
+}
+.category_tt{
+    text-align: left;
+    line-height: 50px;
+    width: 150px;
+}
+.category_tt2{
+    text-align: left;
+}
+.category_tt span{
+    font-size: 13px;
+}
+.big_tt{
+    color: red;
+}
+.textarea{
+    float: left;
+    width: 300px;
+    height: 200px;
+}
+.submit_bt{
+    margin-right: 20px;
+}
+/*tim kiem*/
 .search_title{
     width: 554px;
     padding: 10px;
@@ -383,4 +407,9 @@
 
 .search_title .total_search_result {
     clear: left;
+}
+/*lien he*/
+.input_lien_he {
+    float: left !important;
+    width: 150px !important;
 }

@@ -1,0 +1,50 @@
+<% tmp=0%>
+<% @san_phams.each do |san_pham| %>
+<% if san_pham.type_id != tmp  %>
+<% tmp=san_pham.type_id %>
+<% if san_pham != @san_phams.first %>
+  </table>
+<% end %>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="dssanpham">
+      <span><% @type=Type.find(san_pham.type_id)%> <%= @type.name %></span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-bordered" >
+      <tr>
+        <td class="img_admin">
+          <span class="title2">Ảnh đại diện</span>
+        </td>
+        <td class="name_admin">
+          <span class="title2">Tên xe</span>
+        </td>
+        <td class="edit_admin">
+          <span class="title2">Sửa</span>
+        </td>
+        <td class="add_admin">
+          <span class="title2">Xóa</span>
+        </td>
+      </tr>
+      <% end %>
+      <tr>
+        <td class="img_col1">
+          <%= image_tag(san_pham.image_url,class: "image_shơw" )%>
+        </td>
+        <td>
+          <span><%= san_pham.ten %></span>
+        </td>
+        <td class="img-col2">
+          <%= link_to 'sửa', edit_san_pham_path(san_pham) %>
+        </td>
+        <td class="img-col2">
+          <%= link_to 'Xóa', san_pham, method: :delete, data: { confirm: 'Xóa thông tin ' +san_pham.ten+'?'}%>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

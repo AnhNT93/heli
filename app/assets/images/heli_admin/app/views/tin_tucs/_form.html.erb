@@ -1,0 +1,36 @@
+<%= form_for(@tin_tuc) do |f| %>
+  <% if @tin_tuc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tin_tuc.errors.count, "error") %> prohibited this tin_tuc from being saved:</h2>
+
+      <ul>
+      <% @tin_tuc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label "Tiêu đề" %><br>
+    <%= f.text_field :tieu_de %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label "Ảnh tiêu đề" %><br>
+    <%= image_tag(@tin_tuc.anh_tieu_de.url, width: '200px', height: '200px') if @tin_tuc.anh_tieu_de? %>
+    <%= f.file_field :anh_tieu_de %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label "Nội dung" %><br>
+    <%= f.text_area :noi_dung, class: "ckeditor" %>
+  </div>
+  <br>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+  <br>
+  <br>
+<% end %>

@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     get 'static_pages/gioi_thieu'
     get 'static_pages/dich_vu_ki_thuat'
     get 'static_pages/bo_cong_tac'
-    get 'static_pages/lien_he'
     resources :tin_tucs
     match '/contacts', to: 'contacts#new', via: 'get'
     resources "contacts", only: [:new, :create]

@@ -1,12 +1,12 @@
 <div class="tab-pane fade in active" id="coban">
     <div class="image_content">
-      <%= link_to image_tag(@san_pham.image_url),image_path(@san_pham.image_url), :rel => "shadowbox" %>
+      <%= link_to image_tag("heli_admin/public"+@san_pham.image_url),image_path("heli_admin/public"+@san_pham.image_url), :rel => "shadowbox" %>
       <br>
       <br>
 
-      <%= link_to image_path(@san_pham.image_url), :rel => "shadowbox" do %>
+      <%= link_to image_path("heli_admin/public"+@san_pham.image_url), :rel => "shadowbox" do %>
       <span  class="glyphicon glyphicon-zoom-in"></span>
-      <span>Xem ảnh lớn</span>
+      <span><%= t("san_pham.xem_anh_lon")%></span>
       <% end %>
     </div>
     <div class="info_content">

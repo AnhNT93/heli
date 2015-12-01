@@ -1,0 +1,21 @@
+
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h1 class="text-center login-title">Trang quản trị Helivietnam.vn</h1>
+      <div class="account-wall">
+        <%= image_tag("logo/bm.png",class: "profile-img")%>                
+        <%= form_for(resource,:html => {class: "form-signin"},as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= f.email_field :email, autofocus: true, class: "form-control email", type:"text" ,placeholder: "Email" %>
+        <%= f.password_field :password,class: "form-control password",placeholder: "Password", autocomplete: "off" %>
+        <%= f.submit "Sign in",class: "btn btn-lg btn-primary btn-block" %>
+        <% if devise_mapping.rememberable? -%>
+        <label class="checkbox pull-left">
+        <%= f.check_box :remember_me %>
+        Remember me
+        </label>
+        <% end -%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+

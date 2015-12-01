@@ -1,0 +1,48 @@
+<header>
+<nav class=" navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <%= link_to root_path, class: "navbar-brand title_text" do %>
+                    <i class="glyphicon glyphicon-home"></i>
+                    Trang quản trị
+            <% end %>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse ">
+            <ul class="nav navbar-nav">
+                <li>
+                  <%= link_to san_phams_path, class: "title_text" do %>
+                    <i class="glyphicon glyphicon-tree-conifer"></i>
+                    Sản phẩm 
+                  <% end %>
+                </li>
+                <li><%= link_to tin_tucs_path, class: "title_text" do %>
+                    <i class="glyphicon glyphicon-globe"></i>
+                    Tin tức 
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_san_pham_path, class: "title_text" do %>
+                    <i class="glyphicon glyphicon-save"></i>
+                    Thêm xe
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_tin_tuc_path, class: "title_text" do %>
+                    <i class="glyphicon glyphicon-save"></i>
+                    Thêm tin tức
+                  <% end %>
+                </li>
+                <% if user_signed_in? %>
+                  <li><%= link_to "Thoát", destroy_user_session_path,method: :delete, class: "title_text exit"%></li>
+                <% end %>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+</header>

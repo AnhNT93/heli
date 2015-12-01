@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126114328) do
+ActiveRecord::Schema.define(version: 20151201091215) do
+
+  create_table "punches", force: :cascade do |t|
+    t.integer  "punchable_id",   limit: 4,              null: false
+    t.string   "punchable_type", limit: 20,             null: false
+    t.datetime "starts_at",                             null: false
+    t.datetime "ends_at",                               null: false
+    t.datetime "average_time",                          null: false
+    t.integer  "hits",           limit: 4,  default: 1, null: false
+  end
+
+  add_index "punches", ["average_time"], name: "index_punches_on_average_time", using: :btree
+  add_index "punches", ["punchable_type", "punchable_id"], name: "punchable_index", using: :btree
 
   create_table "san_phams", force: :cascade do |t|
     t.integer  "type_id",                                       limit: 4

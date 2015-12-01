@@ -1,0 +1,181 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.checkbox
+{
+    font-weight: normal;
+}
+.account-wall .form-control1
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-control:focus
+{
+    z-index: 2;
+}
+.email
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.password
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title {
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img {
+    width: 110px;
+    height: 80px;
+    margin: 0 auto 10px;
+    display: block;
+}
+/*quan tri*/
+.title_text i{
+    margin-right: 5px;
+}
+.navbar-brand{
+    margin-right: 5px;
+}
+.navbar-nav li{
+    margin-right: 5px;
+}
+h1{
+    text-align: center;
+    border-bottom: 1px red solid;
+}
+h1 p{
+    color: red;
+    font-weight: bold;
+}
+.home_img{
+    margin-top: 50px;
+    margin-left: 30%;
+}
+.table_admin{
+    margin-top: 50px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.col_admin{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: red;
+}
+.col_admin span{
+    color: #ffffff;
+}
+.category{
+    color: #000000;
+    font-weight: bold;
+    line-height: 50px;
+}
+/*danh sach san pham*/
+.dssanpham{
+    height: 40px;
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 7px;
+}
+.dssanpham span{
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #ffffff;
+}
+.img_admin{
+    width: 30%;
+    text-align: center;
+}
+.title2{
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 17px;
+}
+.name_admin{
+    width: 50%;
+    text-align: center;
+
+}
+.edit_admin{
+    width: 10%;
+    text-align: center;
+}
+.add_admin{
+    width: 10%;
+    text-align: center;
+}
+.img_col1{
+    text-align: center !important;
+}
+.img-col2{
+    text-align: center;
+    padding-top: 20px !important;
+}
+.image_shơw{
+    width: 100px;
+}
+/*tin tuc*/
+h3{
+    text-align: center;
+}
+h3 span{
+    color: #28a4c9;
+}
+.img_tt{
+    width: 100px;
+}
+.select_sp{
+    width: 300px !important;
+}
+.add_category{
+    font-weight: bold;
+    color: #000000;
+    font-size: 14px;
+}
+.submit_sp{
+    text-align: center;
+}
+.reset_button{
+    margin-right: 20px;
+}
+.exit{
+    font-size: 12px;
+    color: #2aabd2 !important;
+}
+.row{
+    line-height: 1.5
+}
