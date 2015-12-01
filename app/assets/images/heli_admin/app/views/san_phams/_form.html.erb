@@ -1,0 +1,516 @@
+<%= form_for(@san_pham) do |f| %>
+  <% if @san_pham.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@san_pham.errors.count, "error") %> prohibited this san_pham from being saved:</h2>
+
+      <ul>
+      <% @san_pham.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <%= f.label "Hình ảnh", class: "col-sm-4 add_category"%>
+    <%= image_tag(@san_pham.image.url, width: '200px', height: '200px') if @san_pham.image? %>
+    <%= f.file_field :image %>
+  </div>
+  <br>
+  <div class="row">
+    <%= f.label "Lựa chọn loại xe", class: "add_category col-sm-4"%>
+    <%= f.select :type_id, Type.all.map {|p| [p.name,p.id]}.uniq,{:prompt => "Select a type"},{class: "form-control select_sp col-sm-4"} %>
+  </div>
+  <br>
+<!--   <div class="row">
+        <div class="col-sm-4">
+            <span class="add_category">Tên xe</span>
+        </div>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </div> -->
+  <div class="row">
+    <%= f.label t("san_pham.ten_vi"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :ten, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.ten_cn"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :ten_cn, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.nha_san_xuat"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :nha_san_xuat, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.model"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :model, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.kieu_dong_co"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :kieu_dong_co, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.kieu_hoat_dong"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :kieu_hoat_dong, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.so_di_chuyen"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :so_di_chuyen, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.tai_trong_nang"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :tai_trong_nang, {placeholder: "kg",class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.tam_tai_trong"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :tam_tai_trong, {placeholder: "mm",class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.loai_lop"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :loai_lop, {class: "form-control "} %>
+    </div> 
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.so_banh_xe_truoc_sau"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :so_banh_xe_truoc_sau, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_cao_nang_lon_nhat"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :chieu_cao_nang_lon_nhat, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_cao_nang_tu_do"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :chieu_cao_nang_tu_do, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_cao_nang_tieu_chuan"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :chieu_cao_nang_tieu_chuan, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_cao_khung_nang"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :chieu_cao_khung_nang, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_cao_khung_nang_khi_nang_cao_nhat"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :chieu_cao_khung_nang_khi_nang_cao_nhat, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_cao_co_so"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :chieu_cao_co_so, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_dai_co_so_voi_cang_nang"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :chieu_dai_co_so_voi_cang_nang, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_dai_co_so"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :chieu_dai_co_so, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_rong_co_so"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :chieu_rong_co_so, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.khoang_cach_truc_banh_xe"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :khoang_cach_truc_banh_xe, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.khoang_sang_gam_xe"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :khoang_sang_gam_xe, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.ban_kinh_vong_quay"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :ban_kinh_vong_quay, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.ban_kinh_vong_quay_nho_nhat"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :ban_kinh_vong_quay_nho_nhat, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.goc_nghieng_cot_nang"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :goc_nghieng_cot_nang, {class: "form-control ",placeholder: "độ"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.kich_thuoc_cang_nang_dai_rong_day"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :kich_thuoc_cang_nang_dai_rong_day, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.toc_do_di_chuyen_lon_nhat_co_tai_va_khong_tai"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :toc_do_di_chuyen_lon_nhat_co_tai_va_khong_tai, {class: "form-control ",placeholder: "km/h"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.toc_do_nang_co_tai_va_khong_tai"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :toc_do_nang_co_tai_va_khong_tai, {class: "form-control ",placeholder: "mm/s"} %>
+    </div>
+  </div>
+  <br> 
+
+  <div class="row">
+    <%= f.label t("san_pham.kich_thuoc_cang_nang_dai_rong_day"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :kich_thuoc_cang_nang_dai_rong_day, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br> 
+
+  <div class="row">
+    <%= f.label t("san_pham.kha_nang_leo_doc_co_tai_va_khong_tai"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :kha_nang_leo_doc_co_tai_va_khong_tai, {class: "form-control ",placeholder: "%"} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.dien_nang_su_dung"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :dien_nang_su_dung, {class: "form-control ",placeholder: "V/Ah"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.co_lop_truoc"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :co_lop_truoc, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.co_lop_sau"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :co_lop_sau, {class: "form-control "} %>
+    </div>
+  </div>
+  <br> 
+
+  <div class="row">
+    <%= f.label t("san_pham.tu_trong"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.number_field :tu_trong, {class: "form-control ",placeholder: "kg"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.model_dong_co"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :model_dong_co, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.cong_suat_vong_quay"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :cong_suat_vong_quay, {class: "form-control ",placeholder: "Kw/rpm"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.dung_tich_buong_dot"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :dung_tich_buong_dot, {class: "form-control ",placeholder: "L"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.binh_chua_nhien_lieu"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :binh_chua_nhien_lieu, {class: "form-control ",placeholder: "L"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.mo_to_di_chuyen"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :mo_to_di_chuyen, {class: "form-control ",placeholder: "KW"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.mo_to_bom"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :mo_to_bom, {class: "form-control ",placeholder: "KW"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.mo_to_lai"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :mo_to_lai, {class: "form-control ",placeholder: "KW"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.mo_to_nang"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :mo_to_nang, {class: "form-control ",placeholder: "KW"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.he_thong_dieu_khien_mo_to_di_chuyen"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :he_thong_dieu_khien_mo_to_di_chuyen, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.he_thong_dieu_khien_motor_bom"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :he_thong_dieu_khien_motor_bom, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>    
+
+  <div class="row">
+    <%= f.label t("san_pham.he_thong_phanh"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :he_thong_phanh, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.ap_suat_dau_dinh_muc"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :ap_saut_dau_dinh_muc, {class: "form-control ",placeholder: "Mpa"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.so_bac"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :so_bac, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <%= f.label t("san_pham.khoang_dich_chuyen_cang"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :khoang_dich_chuyen_cang, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.luc_keo"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :luc_keo, {class: "form-control ",placeholder: "KN"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.chieu_cao_cabin"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :chieu_cao_cabin, {class: "form-control ",placeholder: "mm"} %>
+    </div>
+  </div>
+  <br>  
+
+  <div class="row">
+    <%= f.label t("san_pham.momen"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :momen, {class: "form-control "} %>
+    </div>
+  </div>
+  <br>    
+
+  <div class="row">
+    <%= f.label t("san_pham.ac_quy"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :ac_quy, {class: "form-control ",placeholder: "V/Ah"} %>
+    </div>
+  </div>
+  <br>    
+
+  <div class="row">
+    <%= f.label t("san_pham.tong_khoi_luong"), class: "col-sm-4 add_category" %>
+    <div class="input-group input-group-sm col-md-4 col-sm-4" >
+      <span class="input-group-addon">@</span>
+      <%= f.text_field :tong_khoi_luong, {class: "form-control ",placeholder: "kg"} %>
+    </div>
+  </div>
+  <br>  
+  <div class="row">
+        <div class="col-sm-12 submit_sp">
+            <%= f.submit "Submit", class: "btn btn-default"%>
+        </div>
+    </div>
+<% end %>

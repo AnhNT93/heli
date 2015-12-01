@@ -1,0 +1,54 @@
+
+<div class="row">
+        <div class="col-sm-12">
+            <h1>
+                <p>Tin tức</p>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3> <span>Danh sách tin tức cũ</span></h3>
+            <br>
+            <table class="table table-bordered" >
+                <tr>
+                    <td class="tt_img">
+                        <span class="title2">Ảnh đại diện</span>
+                    </td>
+                    <td class="tt_td">
+                        <span class="title2">Tiêu đề</span>
+                    </td>
+                    <td class="tt_day">
+                        <span class="title2">Ngày tạo</span>
+                    </td>
+                    <td class="tt_edit">
+                        <span class="title2">Sửa</span>
+                    </td>
+                    <td  class="tt_edit">
+                        <span class="title2">Xóa</span>
+                    </td>
+                </tr>
+                <% @tin_tucs.each do |tin_tuc| %>
+
+                <tr>
+                    <td class="tt_img">
+                      <%= image_tag(tin_tuc.anh_tieu_de.url, class: "img_tt")%>
+                    </td>
+                    <td>
+                        <span><%= tin_tuc.tieu_de%></span>
+                    </td>
+                    <td class="tt_day">
+                        <span><%= tin_tuc.created_at %></span>
+                    </td>
+                    <td class="tt_edit">
+                        <a href="#"> <span><%= link_to "sửa", edit_tin_tuc_path(tin_tuc)%></span></a>
+                    </td>
+                    <td class="tt_edit">
+                        <a href="#"> <span><%= link_to 'Xóa', tin_tuc, method: :delete, data: { confirm: 'Xóa tin tức này?'}%>
+</span></a>
+                    </td>
+                </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>

@@ -1,15 +1,81 @@
-<div align="center">
-  <h3>Send A message to Us</h3>
+<div class="title_gt">
+            <p class="title_bold">
+                GỬI THÔNG TIN YÊU CẦU TRỰC TUYẾN
+            </p>
+            <br>
+            <p>
+                Các yêu cầu sẽ được chuyển tới <span class="title_bold">CÔNG TY TNHH XE NÂNG BÌNH MINH</span>, chúng tôi sẽ trả lời trong thời gian sớm nhất có thể
+            </p>
+            <br>
+            <div class="title_center">
+                <p> Copyright © 2015 - <span class="title_bold">Heli Forklift</span></p>
+                <p class="title_bold">Công ty TNHH xe nâng Bình Minh</p>
+                <p class="title_bold">Trụ sở chính :Km 9+500, Nguyễn Văn Linh,Sài Đồng,Long BIên,Hà Nội</p>
+                <p class="title_bold">Chi nhánh TP HCM: 288/2 QL1A, P.Thới An, Q12, TP Hồ Chí Minh</p>
+                <p class="title_bold">Hotline: 0969 042 725- Mr.Long</p>
+                <p class="title_bold">Email: quylong.bm@gmail.com  - Website: helivietnam.org</p>
+                <%= simple_form_for @contact do |f| %>
 
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %>
-    <%= f.input :phone_number, :required => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :message, :as => :text, :required => true %>
-      <%= recaptcha_tags %>
-    <div>
-      </br>
-      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
-    </div>
-  <% end %>
-</div>
+                <table class="tintin_table" >
+                    <tr>
+                        <td class="category_tt">
+                            <span>Name:</span>
+                        </td>
+                        <td class="category_tt2">
+                            <%= f.input :name,:label => false, :required => true, :input_html =>{class: "input_lien_he"} %>
+                            <span>(<span class="big_tt">*</span>)</span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="category_tt">
+                            <span>Phone number:</span>
+                        </td>
+                        <td class="category_tt2">
+                            <%= f.input :phone_number,:label => false, :required => true, :input_html =>{class: "input_lien_he"} %>
+                            <span>(<span class="big_tt">*</span>)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="category_tt">
+                            <span>Address:</span>
+                        </td>
+                        <td class="category_tt2">
+                            <%= f.input :address,:label => false, :input_html =>{class: "input_lien_he"} %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="category_tt">
+                            <span>Email:</span>
+                        </td>
+                        <td class="category_tt2">
+                            <%= f.input :email,:label => false, :required => true, :input_html =>{class: "input_lien_he"} %>
+                            <span>(<span class="big_tt">*</span>)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="category_tt">
+                            <span>Message:</span>
+                        </td>
+                        <td class="category_tt2">
+                            <%= f.input :message,:label => false, :as => :text, cols: "3", role: "10", :required => true, :input_html => {class: "textarea"} %>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td> <%= recaptcha_tags %></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td class="category_tt">
+                        </td>
+                        <td class="category_tt2">
+                            <%= f.button :submit, 'Send message', :class=> "btn btn-primary submit_bt" %>
+                        </td>
+                    </tr>
+                </table>
+                <% end %>
+            </div>
+
+        </div>

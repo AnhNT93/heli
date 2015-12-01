@@ -5,7 +5,7 @@
       <ul>
         <% tin_tuc_moi.each do |tin_tuc|%>
         <li>
-          <%= link_to image_tag(tin_tuc.anh_tieu_de.url), tin_tuc %>
+          <%= link_to image_tag("heli_admin/public"+tin_tuc.anh_tieu_de.url), tin_tuc %>
           <%= link_to tin_tuc.tieu_de, tin_tuc %>
         </li>
         <% end %>
@@ -21,7 +21,7 @@
             </a>
             </div>
             <a href="https://www.youtube.com/embed/sXnNAvkZxCg" rel="shadowbox;width=640;height=385">
-            <span class="support_video video-link2 demo-link" >(Xem thêm video)</span>
+            <span class="support_video video-link2 demo-link" >(<%= t("menu_right.xem_them_video")%>)</span>
             </a>
   </div>
   <%= image_tag('logo/bong_menu.png')%>
@@ -37,12 +37,12 @@
     <ul>
       <% san_pham_ban_chay.each do |san_pham|%>
       <li>
-        <%= link_to image_tag(san_pham.image_url), san_pham%>
+        <%= link_to image_tag("heli_admin/public"+san_pham.image_url), san_pham%>
         <br>
         <strong><% if t("language") == "cn" %>
-            <%= san_pham.ten_cn %>
+            <%= link_to san_pham.ten_cn, san_pham %>
           <% elsif %>
-            <%= san_pham.ten %>    
+            <%= link_to san_pham.ten, san_pham %>    
           <% end %></strong>
         <br>
         <strong class="denwa"><%= t("san_pham.lien_he")%>: 0969.042.725 </strong>

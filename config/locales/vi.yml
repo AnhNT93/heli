@@ -119,10 +119,12 @@ vi:
     momen: "Momen"
     chieu_cao_khung_nang_khi_nang_cao_nhat: "Chiều cao khung nâng khi nâng cao nhất"
     chieu_cao_cabin: "Chiều cao cabin"
+    xem_anh_lon: "Xem ảnh lớn"
   menu_right:
     tin_moi: "TIN MỚI"
     video: "VIDEO"
     san_pham_ban_chay: "SẢN PHẨM BÁN CHẠY"
+    xem_them_video: "Xem thêm video"
   bo_cong_tac: 
     bo_cong_tac_kep_thung_carton: "Bộ công tác kẹp thùng Carton"
     bo_cong_tac_keo_day: "Bộ công tác Kéo/ Đẩy"

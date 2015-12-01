@@ -1,0 +1,690 @@
+<table id="chitiet" class="tb_info_big table-bordered table-hover tab-pane fade" cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.nha_san_xuat') %></span>
+      </td>
+      <td colspan="2" class="nsx">
+        <span><%= @san_pham.nha_san_xuat%></span>
+      </td>
+    </tr>
+    <% if @san_pham.model.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.model') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.model%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.kieu_dong_co.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.kieu_dong_co') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span>
+          <% if @san_pham.kieu_dong_co.mb_chars.downcase.to_s["điện"] != nil %>
+                <%= t("san_pham.dong_co_dien") %>
+              <% elsif @san_pham.kieu_dong_co.mb_chars.downcase.to_s["ga"] != nil %>
+                <%= t("san_pham.dong_co_ga") %>
+              <% elsif @san_pham.kieu_dong_co.mb_chars.downcase.to_s["xăng"] != nil %>
+                <%= t("san_pham.dong_co_xang") %>
+              <% elsif @san_pham.kieu_dong_co.mb_chars.downcase.to_s["diesel"] != nil  %>
+                <%= t("san_pham.dong_co_diesel") %>
+              <% elsif %>
+                <%= @san_pham.kieu_dong_co%>
+              <% end %>
+        </span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.kieu_hoat_dong.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.kieu_hoat_dong') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span>
+          <% if @san_pham.kieu_hoat_dong.mb_chars.downcase.to_s == "đứng lái" %>
+            <%= t("san_pham.dung_lai") %>
+          <% elsif @san_pham.kieu_hoat_dong.mb_chars.downcase.to_s == "ngồi lái" %>
+            <%= t("san_pham.ngoi_lai") %>
+          <% elsif %>
+            <%= @san_pham.kieu_hoat_dong%>
+          <% end %>
+        </span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.tai_trong_nang.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.tai_trong_nang') %></span>
+      </td>
+      <td class="td2">
+        <span>kg</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.tai_trong_nang%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.tam_tai_trong.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.tam_tai_trong') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.tam_tai_trong%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.so_bac.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.so_bac') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.so_bac%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.khoang_dich_chuyen_cang.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.khoang_dich_chuyen_cang') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.khoang_dich_chuyen_cang%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.luc_keo.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.luc_keo') %></span>
+      </td>
+      <td class="td2">
+        <span>KN</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.luc_keo%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.chieu_cao_cabin.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_cao_cabin') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_cao_cabin%></span>
+      </td>
+    </tr>
+
+    <% end %>
+    <% if @san_pham.loai_lop.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.loai_lop') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span>
+          <% if @san_pham.loai_lop.mb_chars.downcase.to_s == "lốp đặc hoặc lốp hơi" %>
+            <%= t("san_pham.lop_dac_hoi") %>
+          <% elsif %>
+            <%= @san_pham.loai_lop%>
+          <% end %>
+        </span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.so_banh_xe_truoc_sau.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.so_banh_xe_truoc_sau') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.so_banh_xe_truoc_sau%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.chieu_cao_nang_lon_nhat.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_cao_nang_lon_nhat') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_cao_nang_lon_nhat%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.chieu_cao_nang_tu_do.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_cao_nang_tu_do') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_cao_nang_tu_do%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.chieu_cao_nang_tieu_chuan.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_cao_nang_tieu_chuan') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_cao_nang_tieu_chuan %></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.chieu_cao_khung_nang.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_cao_khung_nang') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_cao_khung_nang%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.chieu_cao_khung_nang_khi_nang_cao_nhat.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_cao_khung_nang_khi_nang_cao_nhat') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_cao_khung_nang_khi_nang_cao_nhat%></span>
+      </td>
+    </tr>
+
+    <% end %>
+    <% if @san_pham.chieu_cao_co_so.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_cao_co_so') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_cao_co_so%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.chieu_dai_co_so.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_dai_co_so') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_dai_co_so%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.chieu_dai_co_so_voi_cang_nang.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_dai_co_so_voi_cang_nang') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_dai_co_so_voi_cang_nang%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.chieu_rong_co_so.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.chieu_rong_co_so') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.chieu_rong_co_so%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.khoang_cach_truc_banh_xe.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.khoang_cach_truc_banh_xe') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.khoang_cach_truc_banh_xe%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.khoang_sang_gam_xe.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.khoang_sang_gam_xe') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.khoang_sang_gam_xe%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.ban_kinh_vong_quay.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.ban_kinh_vong_quay') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.ban_kinh_vong_quay%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.ban_kinh_vong_quay_nho_nhat.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.ban_kinh_vong_quay_nho_nhat') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.ban_kinh_vong_quay_nho_nhat%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.goc_nghieng_cot_nang.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.goc_nghieng_cot_nang') %></span>
+      </td>
+      <td class="td2">
+        <span>Độ</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.goc_nghieng_cot_nang%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.kich_thuoc_cang_nang_dai_rong_day.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.kich_thuoc_cang_nang_dai_rong_day') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.kich_thuoc_cang_nang_dai_rong_day%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.toc_do_di_chuyen_lon_nhat_co_tai_va_khong_tai.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.toc_do_di_chuyen_lon_nhat_co_tai_va_khong_tai') %></span>
+      </td>
+      <td class="td2">
+        <span>km/h</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.toc_do_di_chuyen_lon_nhat_co_tai_va_khong_tai%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.toc_do_nang_co_tai_va_khong_tai.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.toc_do_nang_co_tai_va_khong_tai') %></span>
+      </td>
+      <td class="td2">
+        <span>mm/s</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.toc_do_nang_co_tai_va_khong_tai%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.toc_do_ha_co_tai_va_khong_tai.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.toc_do_ha_co_tai_va_khong_tai') %></span>
+      </td>
+      <td class="td2">
+        <span>mm/s</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.toc_do_ha_co_tai_va_khong_tai%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.kha_nang_leo_doc_co_tai_va_khong_tai.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.kha_nang_leo_doc_co_tai_va_khong_tai') %></span>
+      </td>
+      <td class="td2">
+        <span>%</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.kha_nang_leo_doc_co_tai_va_khong_tai%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.dien_nang_su_dung.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.dien_nang_su_dung') %></span>
+      </td>
+      <td class="td2">
+        <span>V/Ah</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.dien_nang_su_dung%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.co_lop_truoc.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.co_lop_truoc') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.co_lop_truoc%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.co_lop_sau.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.co_lop_sau') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.co_lop_sau%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.tu_trong.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.tu_trong') %></span>
+      </td>
+      <td class="td2">
+        <span>kg</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.tu_trong%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.model_dong_co.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.model_dong_co') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.model_dong_co%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.cong_suat_vong_quay.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.cong_suat_vong_quay') %></span>
+      </td>
+      <td class="td2">
+        <span>Kw/rpm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.cong_suat_vong_quay%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.mo_to_di_chuyen.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.mo_to_di_chuyen') %></span>
+      </td>
+      <td class="td2">
+        <span>KW</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.mo_to_di_chuyen%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.mo_to_bom.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.mo_to_bom') %></span>
+      </td>
+      <td class="td2">
+        <span>KW</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.mo_to_bom%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.he_thong_dieu_khien_mo_to_di_chuyen.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.he_thong_dieu_khien_mo_to_di_chuyen') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.he_thong_dieu_khien_mo_to_di_chuyen%></span>
+      </td>
+    </tr>
+    <% end %>
+    
+    <% if @san_pham.mo_to_lai.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.mo_to_lai') %></span>
+      </td>
+      <td class="td2">
+        <span>KW</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.mo_to_lai%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.mo_to_nang.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.mo_to_nang') %></span>
+      </td>
+      <td class="td2">
+        <span>KW</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.mo_to_nang%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.he_thong_dieu_khien_motor_bom.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.he_thong_dieu_khien_motor_bom') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.he_thong_dieu_khien_motor_bom%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.loai_dieu_khien_lai.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.loai_dieu_khien_lai') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.loai_dieu_khien_lai %></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.he_thong_phanh.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.he_thong_phanh') %></span>
+      </td>
+      <td class="td2">
+        <span></span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.he_thong_phanh%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.ap_saut_dau_dinh_muc.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.ap_suat_dau_dinh_muc') %></span>
+      </td>
+      <td class="td2">
+        <span>Mpa</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.ap_saut_dau_dinh_muc%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.dung_tich_buong_dot.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.dung_tich_buong_dot') %></span>
+      </td>
+      <td class="td2">
+        <span>L</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.dung_tich_buong_dot%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.binh_chua_nhien_lieu.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.binh_chua_nhien_lieu') %></span>
+      </td>
+      <td class="td2">
+        <span>L</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.binh_chua_nhien_lieu%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.momen.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.momen') %></span>
+      </td>
+      <td class="td2">
+        <span>mm</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.momen%></span>
+      </td>
+    </tr>
+
+    <% end %>
+    <% if @san_pham.ac_quy.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.ac_quy') %></span>
+      </td>
+      <td class="td2">
+        <span>V/Ah</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.ac_quy%></span>
+      </td>
+    </tr>
+    <% end %>
+    <% if @san_pham.tong_khoi_luong.to_s != "" %>
+    <tr>
+      <td class="td1">
+        <span><%= t('san_pham.tong_khoi_luong') %></span>
+      </td>
+      <td class="td2">
+        <span>KW</span>
+      </td>
+      <td class="td2">
+        <span><%= @san_pham.tong_khoi_luong%></span>
+      </td>
+    </tr>
+    <% end %>
+  </table>

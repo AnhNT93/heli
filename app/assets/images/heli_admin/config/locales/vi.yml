@@ -49,6 +49,8 @@ vi:
     xe_khac: "Xe khác"
   san_pham:
     ten: "Xe nâng"
+    ten_vi: "Tên tiếng việt"
+    ten_cn: "Tên tiếng trung"
     tan: "Tấn"
     gia: "Giá"
     lien_he: "Liên hệ"
@@ -115,7 +117,7 @@ vi:
     ac_quy: "Ác Quy"
     tong_khoi_luong: "Tổng khối lượng"
     luc_keo: "Lực kéo"
-    khoang_dich_chuyen_cang: "Khoảng dịch chuyển càng"
+    khoang_dich_chuyen_cang: "Khoảng dịch chuyển càng nâng"
     momen: "Momen"
     chieu_cao_khung_nang_khi_nang_cao_nhat: "Chiều cao khung nâng khi nâng cao nhất"
     chieu_cao_cabin: "Chiều cao cabin"
@@ -130,3 +132,7 @@ vi:
     bo_cong_tac_kep_gach: "Bộ công tác kẹp gạch"
     bo_cong_tac_kep_giay: "Bộ Công tác Gắp quả Giấy"
     bo_cong_tac_gat_gu: "Bộ công tác gật gù (Ngửa ra, ngửa vào)"
+  devise:
+    sessions:
+      user:
+        signed_in: "Đăng nhập thành công"

@@ -1,5 +1,5 @@
 class SanPhamsController < ApplicationController
-  before_action :set_san_pham, only: [:show, :edit, :update, :destroy]
+  before_action :set_san_pham, only: [:show]
 
   # GET /san_phams
   # GET /san_phams.json
