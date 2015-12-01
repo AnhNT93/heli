@@ -1,0 +1,170 @@
+
+/*container left*/
+.container-left{
+    width: 213px;
+    height: auto;
+    float: left;
+}
+/*menu phụ trái*/
+#menu_content{
+    height: 360px;
+}
+.menu_content_header{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #F98484;
+    background: -o-linear-gradient(top, #F98484, #F90000);
+    background: -ms-linear-gradient(top, #F98484, #F90000);
+    background: -webkit-linear-gradient(top, #F98484, #F90000);
+    background: -moz-linear-gradient(top, #F98484, #F90000);
+    background: linear-gradient(to bottom, #F98484, #F90000);
+    border-image: none;
+    border-style: solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-width: 0;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    margin: 0;
+    font: 12px/3.4 Arial,Helvetica,sans-serif;
+    font-weight: bold;
+}
+#menu_content ul ul{
+    z-index: 99;
+}
+#menu_content ul {
+    background: #D6D4D4;
+    width: 213px;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+    margin-top: 0px;
+}
+#menu_content li {
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #353535;
+    transition: padding 500ms ease;
+}
+#menu_content li:nth-child(even) a{
+    border-right: 3px solid #295EF2;
+}
+#menu_content li:nth-child(odd) a{
+    border-right: 3px solid #FC25FC;
+}
+#menu_content li a {
+    text-decoration: none;
+    color: #260000;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    margin-left: 5px;
+}
+#menu_content li:hover li a{
+    color: #260000;
+}
+#menu_content li li:hover a{
+    color: #5E0CF7;
+}
+#menu_content li li a{
+    font-size: 11px;
+}
+#menu_content li:hover a{
+    color: #5E0CF7;
+}
+#menu_content ul li {
+    position: relative;
+}
+#menu_content .sub-menu_content {
+    position: absolute;
+    left: 213px;
+    top: 0;
+    display: none;
+}
+
+#menu_content li:hover .sub-menu_content {
+    display: block;
+}
+#menu_content li:hover{
+    padding-right: 15px;
+}
+/*icon car*/
+.forklift{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+/*thống kê truy cập*/
+.container-left .statistic-content{
+    background-color: #D6D4D4;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 172px;
+}
+.container-left .statistic-content table{
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.container-left .statistic-content table td{
+    line-height: 30px;
+}
+.container-left .statistic-content .glyphicon-user{
+    color: #FC0505;
+}
+.container-left .statistic-content .glyphicon-home{
+    color: #07CE04;
+}
+.container-left .statistic-content .glyphicon-calendar{
+    color: #5B008C;
+}
+.container-left .statistic-content .glyphicon-stats{
+    color: #384206;
+}
+/*hỗ trợ trực tuyến*/
+.support-content{
+    text-align: center;
+    background-color: #D6D4D4;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.support-content .table-suport{
+    margin-left:10px;
+    margin-top: 5px;
+}
+.support-content tr{
+    height: 25px;
+}
+.support-content tr td{
+    padding-right: 10px;
+    padding-bottom: 15px;
+    font: bold 14px arial;
+}
+.support-content tr td strong span{
+    color: #fe0119;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 0 1px 0 #fd435a, 0 1px 0 #272b36, 0 1px 1px rgba(0, 0, 0, 0.25), 0 5px 2px rgba(0, 0, 0, 0.15);
+}
+.support-content tr td .phone_content{
+    color: #000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 3px 0 #e9eef2, 0 2px 0 #e9eef2, 0 5px 10px rgba(0, 0, 0, 0.25), 0 5px 2px rgba(0, 0, 0, 0.15);
+}
+.support-content tr td .mail_content{
+    color: #2525F9;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    text-shadow: 0 3px 0 #e9eef2, 0 2px 0 #e9eef2, 0 5px 10px rgba(0, 0, 0, 0.25), 0 5px 2px rgba(0, 0, 0, 0.15);
+}

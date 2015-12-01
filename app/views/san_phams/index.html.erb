@@ -1,0 +1,35 @@
+
+<div class="classify_sp">
+  <%= image_tag("image/forklift.png") %>
+  <div class="classify_sp_heading"> <%= t("loai_xe.xe_nang_hang_diesel_heli") %>
+  </div>
+
+</div>
+<% @diesel.each do |san_pham|%>
+<%= render san_pham%>
+<% end %>
+
+<div class="classify_sp">
+  <%= image_tag("image/forklift.png") %>
+  <div class="classify_sp_heading"><%= t("loai_xe.xe_nang_dien_heli")%>
+</div>
+</div>
+<% @dien.each do |san_pham|%>
+<%= render san_pham%>
+<% end %>
+
+<div class="classify_sp">
+  <%= image_tag("image/forklift.png") %>
+  <div class="classify_sp_heading"><%= t("loai_xe.xe_nang_xep_pallet")%>
+</div>
+</div>
+<% @pallet.each do |san_pham|%>
+<%= render san_pham%>
+<% end %>
+<div class="classify_sp">
+  <%= image_tag("image/forklift.png") %>
+  <div class="classify_sp_heading"><%= t("loai_xe.xe_khac") %></div>
+</div>
+<% @other.each do |san_pham|%>
+<%= render san_pham%>
+<% end %>

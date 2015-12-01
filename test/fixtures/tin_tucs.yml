@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tieu_de: 
+  anh_tieu_de: MyString
+  noi_dung: MyText
+
+two:
+  tieu_de: 
+  anh_tieu_de: MyString
+  noi_dung: MyText

@@ -1,0 +1,43 @@
+<% if @san_pham.type_id == 2 || @san_pham.type_id == 3 || @san_pham.type_id == 4 || @san_pham.type_id == 5 ||@san_pham.type_id == 9 %>
+<div class="menu_container_center">
+  <ul>
+    <li class="active selected click_menu_container old_sp"><a data-toggle="pill" href="#coban">
+      <%= t("san_pham.thong_tin_co_ban")%>
+      </a>
+    </li>
+    <li class="click_menu_container old_sp"><a data-toggle="pill"  href="#chitiet">
+      <%= t("san_pham.chi_tiet_san_pham")%>
+      </a>
+    </li>
+    <li class="click_menu_container old_sp"><a data-toggle="pill"  href="#bocongtac">
+      <%= t("san_pham.bo_cong_tac")%>
+      </a>
+    </li>
+  </ul>
+</div>
+<% elsif %>
+<div class="menu_container_center">
+  <ul>
+    <li class="active selected click_menu_container new_sp"><a data-toggle="pill" href="#coban">
+      <%= t("san_pham.thong_tin_co_ban")%>
+      </a>
+    </li>
+    <li class="click_menu_container new_sp"><a data-toggle="pill"  href="#chitiet">
+      <%= t("san_pham.chi_tiet_san_pham")%>
+      </a>
+    </li>
+  </ul>
+</div>
+<% end %>
+<div class="content_container_center tab-content">
+  <%= render 'san_pham_co_ban'%>
+  <%= render 'san_pham_chi_tiet'%>
+  <%= render 'bo_cong_tac' %>
+</div>
+<div class="classify_sp">
+  <%= image_tag("image/forklift.png") %>
+  <div class="classify_sp_heading"> <%= t("san_pham.san_pham_lien_quan")%></div>
+</div>
+<% @others.each do |san_pham|%>
+<%= render san_pham%>
+<% end %>

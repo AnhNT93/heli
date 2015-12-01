@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require bootstrap-sprockets
+//= require jquery.turbolinks
+//= require colorbox-rails
+//= require ckeditor-jquery
+//= require bootstrap
+//= require cocoon
+//= require shadowbox
 //= require_tree .

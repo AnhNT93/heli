@@ -1,0 +1,40 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'shadowbox';
+
+*{
+    margin:0px;
+    padding:0px;
+}
+/*all stype*/
+.clearfix::after{
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    line-height: 0;
+}
+body{
+    min-width: 1005px;
+}
+img{
+    border: 0 none;
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+}
+/*container*/
+.container{
+    margin: 0px auto;
+    padding: 10px 0;
+    width: 1005px;
+    height: auto;
+    overflow: visible;
+    position: relative;
+}
+
+
+

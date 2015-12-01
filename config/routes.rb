@@ -1,8 +1,23 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
-
-  devise_for :users, :path => 'admin', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'signup'}
-
+  
+  scope "(:locale)", locale: /vi|cn/ do
+    resources :san_phams do
+      collection do
+        get 'search_result'
+      end
+    end
+    resources :types
+    root 'san_phams#index'
+    get 'static_pages/phu_tung'
+    get 'static_pages/gmap'
+    get 'static_pages/gioi_thieu'
+    get 'static_pages/dich_vu_ki_thuat'
+    get 'static_pages/bo_cong_tac'
+    get 'static_pages/lien_he'
+    resources :tin_tucs
+    match '/contacts', to: 'contacts#new', via: 'get'
+    resources "contacts", only: [:new, :create]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

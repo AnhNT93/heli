@@ -4,18 +4,28 @@
   <title> Project1</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script type="text/javascript">
+    Shadowbox.init();
+  </script>
   <%= csrf_meta_tags %>
-  <%= render "layouts/shim" %>
 </head>
 <body>
   <%= render "layouts/header" %>
   <div class="container">
+    <%= render "layouts/slide_left" %>
+    <div class="container-center ">
     <% flash.each do |message_type, message| %>
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
     <%= yield %>
-    <%= render "layouts/footer" %>
-    <%= debug(params) if Rails.env.development? %>
+    </div>
+    <%= render "layouts/slide_right" %>
   </div>
+  
+  <%= render "layouts/footer" %>
 </body>
 </html>

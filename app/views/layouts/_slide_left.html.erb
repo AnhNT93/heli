@@ -1,0 +1,155 @@
+<div class="container-left clearfix">
+        <div id="menu_content">
+            <h3 class="menu_content_header"><%= t("loai_xe.xe_nang_hang")%></h3>
+            <ul>
+                <% @types = Type.menu_level_1 %>
+                <% @types.each do |type| %>
+                  <li>
+                    <% if type.id == 1 %>
+                      <%= link_to  type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_hang_diesel_heli") %>
+                      <% end %>
+                    <% elsif type.id == 6 %>
+                      <%= link_to type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_dien_heli") %>
+                      <% end %>
+                    <% elsif type.id == 9 %>
+                      <%= link_to type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_gas") %>
+                      <% end %>
+                    <% elsif type.id == 10 %>
+                      <%= link_to  type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_reach_truck") %>
+                      <% end %>
+                    <% elsif type.id == 11 %>
+                      <%= link_to  type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_xep_pallet") %>
+                      <% end %>
+                    <% elsif type.id == 12 %>
+                      <%= link_to type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_trong_tai_lon") %>
+                      <% end %> 
+                    <% elsif type.id == 13 %>
+                      <%= link_to  type do%>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("loai_xe.xe_nang_container") %>
+                      <% end %>
+                    <% end %>
+                    <ul class="sub-menu_content">
+                        <% @type_childs = Type.menu_level_2(type)%>
+                        <% @type_childs.each do |type_child| %>
+                          <li>
+                            <% if type_child.id == 2 %>
+                              <%= link_to t("loai_xe.h2000"), type_child %>
+                            <% elsif type_child.id == 3 %>
+                              <%= link_to t("loai_xe.kseries"), type_child %>
+                            <% elsif type_child.id == 4 %>
+                              <%= link_to t("loai_xe.gseries"), type_child %>
+                            <% elsif type_child.id == 5 %>
+                              <%= link_to t("loai_xe.hseries"), type_child %>
+                            <% elsif type_child.id == 7 %>
+                              <%= link_to t("loai_xe.ac4banh"), type_child %>
+                            <% elsif type_child.id == 8 %>
+                              <%= link_to t("loai_xe.3banh"), type_child %>
+                            <% end %>
+                          </li>
+                        <% end %>
+                    </ul>
+                  </li>    
+                <% end %>
+                <li><%= link_to static_pages_bo_cong_tac_path do %>
+                        <%= image_tag("image/1247-200.png", :class => "forklift") %>
+                        <%= t("menu_left.lua_chon_bo_cong_tac") %>
+                      <% end %></li>
+            </ul>
+        </div>
+        <%= image_tag("logo/bong_menu.png")%>
+         <div class="support-content ">
+             <h3 class="menu_content_header"><%= t("menu_left.ho_tro_truc_tuyen")%></h3>
+             <table class="table-suport">
+                 <tr>
+                     <td align="center">
+                         <strong>
+                            <span>
+                                <%= t("menu_left.kinh_doanh") %>
+                            </span>
+                         </strong>
+                         <br>
+                        <span class="phone_content">
+                                0969042725
+                        </span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <%= image_tag("logo/online.gif")%>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <span class="mail_content">quylong.bm@gmail.com </span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="center">
+                         <strong>
+                            <span>
+                                <%= t("menu_left.ho_tro_ky_thuat") %>
+                            </span>
+                         </strong>
+                         <br>
+                        <span  class="phone_content">
+                                01665387186
+                        </span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <%= image_tag("logo/online.gif")%>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <span class="mail_content">quylong.bm@gmail.com </span>
+                     </td>
+                 </tr>
+             </table>
+         </div>
+         <%= image_tag("logo/bong_menu.png")%>
+         <div class="statistic-content ">
+             <h3 class="menu_content_header"><%= t("menu_left.thong_ke_truy_cap") %></h3>
+             <table cellspacing="0" cellpadding="0" border="0">
+                 <tr>
+                     <td>
+                         <span class="glyphicon glyphicon-user"></span>
+                         <span> <%= t("menu_left.dang_truy_cap")%>:</span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <span class="glyphicon glyphicon-home"></span>
+                         <span><%= t("menu_left.hom_nay") %>:</span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <span class="glyphicon glyphicon-calendar"></span>
+                         <span><%= t("menu_left.thang_hien_tai") %>:</span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <span class="glyphicon glyphicon-stats"></span>
+                         <span><%= t("menu_left.tong_so_luot_truy_cap") %>:</span>
+                     </td>
+                 </tr>
+             </table>
+         </div>
+         <%= image_tag("logo/bong_menu.png")%>
+    </div>

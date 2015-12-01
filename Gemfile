@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+gem 'mysql2', '~> 0.3.13'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -44,4 +45,15 @@ group :development, :test do
 end
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
-gem 'devise'
+gem 'will_paginate-bootstrap'
+gem 'carrierwave'
+gem 'yaml_db'
+gem 'mysql'
+gem 'ckeditor_rails'
+gem 'jquery-turbolinks'
+gem 'colorbox-rails'
+gem "cocoon"
+gem 'shadowbox-rails'
+gem 'mail_form'
+gem 'simple_form'
+gem "recaptcha", require: "recaptcha/rails"

@@ -1,0 +1,110 @@
+/*container right*/
+.container-right{
+    width: 213px;
+    height: auto;
+    float: left;
+
+}
+/*Video*/
+.container-right-video{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 2px;
+    background: #D6D4D4 none repeat scroll 0 0;
+    width: 213px;
+    padding-bottom: 10px;
+}
+.container-right-video .video_content{
+    padding-left: 10px;
+    padding-top: 20px;
+    border-radius: 10px;
+    background: #fff;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 206px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 10px;
+
+}
+.container-right-video .support_video{
+    margin-left: 18%;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: 'Brush Script MT', cursive;;
+    color: #6D0575;
+    z-index: 100;
+    text-decoration: underline;
+}
+/*new content*/
+.new-content{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 2px;
+    background: #D6D4D4 none repeat scroll 0 0;
+    width: 213px;
+    padding-bottom: 10px;
+}
+.container-right ul{
+    list-style: outside none none;
+    height: 150px;
+}
+.container-right ul li{
+    padding: 5px;
+    text-align: justify;
+    float: left;
+}
+.new-content ul li a{
+    color: #020202;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+}
+.new-content ul li a img{
+    border: 1px solid #161313;
+    float: left;
+    margin-right: 4px;
+    padding: 0;
+    width: 60px;
+}
+/*san pham ban chay*/
+.hot_sp{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #D6D4D4 none repeat scroll 0 0;
+    width: 213px;
+    height: auto;
+    overflow: hidden;
+
+}
+.hot_sp .glyphicon-star-empty{
+    color: #FCFC00;
+    font-size: 19px;
+    margin-left: 7px;
+    margin-top: 7px;
+
+}
+.hot_sp ul li{
+    border-bottom: 3px solid #F44242;
+    padding: 5px;
+    text-align: center;
+    width: 213px;
+}
+.hot_sp ul li a{
+    text-decoration: none;
+}
+.hot_sp ul li a img{
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #fff;
+    margin-right: 5px;
+    padding: 2px;
+    width: 120px
+}
+.hot_sp ul li strong{
+    font-size: 13px;
+}
+.hot_sp ul li .denwa{
+    color: #c30;
+    font-weight: bold;
+    padding: 5px;
+}
